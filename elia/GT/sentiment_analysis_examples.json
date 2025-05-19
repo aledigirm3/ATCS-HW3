@@ -1,0 +1,130 @@
+[
+  {
+    "unique_id": "sentiment_analysis_001",
+    "database_id": "card_games/cards_sample20",
+    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT)",
+    "question": "Which cards have flavor text with negative sentiment?",
+    "expected_result": [
+      {
+      "uuid": "068275d5-00e8-5201-9a91-5d83f6d1b95b",
+      "name": "Ostiary Thrull"
+      }
+    ],
+    "udf_justification": "Standard SQL cannot analyze sentiment in text. An LLM UDF is needed to evaluate the emotional tone of flavorText."
+  },
+  {
+    "unique_id": "sentiment_analysis_002",
+    "database_id": "codebase/users20sample",
+    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY)",
+    "question": "Find users with AboutMe descriptions having a negative sentiment (score below -0.5)",
+    "expected_result": [
+      2609,
+      2269
+    ],
+    "udf_justification": "The sentiment analysis UDF provides a numeric score revealing emotional tone. Standard SQL cannot perform this nuanced text analysis, requiring an LLM-based approach to interpret subtle emotional content."
+  },
+  {
+    "unique_id": "sentiment_analysis_003",
+    "database_id": "codebase/users20sample",
+    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY)",
+    "question": "Find user AboutMe descriptions with neutral sentiment (between 0.2 ,-0.2)",
+    "expected_result": [
+      41203,
+      52599
+    ],
+    "udf_justification": "Identifying constructive and supportive sentiment requires contextual understanding that goes beyond literal text interpretation. An LLM UDF generates a precise sentiment score capturing nuanced positive tones."
+  },
+  {
+    "unique_id": "sentiment_analysis_004",
+    "database_id": "card_games/rulings",
+    "table_schema": "CREATE TABLE rulings (\n  id INTEGER PRIMARY KEY)",
+    "question": "Find rulings with sentiment outside the neutral range (-0.2 to 0.2)",
+    "expected_result": [
+      38019,
+      37243,
+      61996,
+      84807
+    ],
+    "udf_justification": "Understanding the subtle emotional undertones in technical rulings requires advanced contextual analysis that provides a nuanced sentiment score. An LLM UDF captures the intricate emotional nuances of rule interpretations."
+  },
+  {
+    "unique_id": "sentiment_analysis_005",
+    "database_id": "app_store/user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "question": "Which reviews have a negative sentiment score (below -0.3)?",
+    "expected_result": [
+      42339,
+      40875,
+      57996
+    ],
+    "udf_justification": "Standard SQL cannot analyze sentiment in text. An LLM UDF is needed to evaluate the emotional tone of reviews and assign a numerical score to determine which ones are strongly negative."
+  },
+  {
+    "unique_id": "sentiment_analysis_006",
+    "database_id": "app_store/user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "question": "Find reviews expressing highly positive sentiment (score above 0.5)",
+    "expected_result": [
+      28514,
+      169,
+      60351,
+      43565,
+      19145
+    ],
+    "udf_justification": "Detecting highly positive sentiment requires sophisticated language understanding beyond simple keyword matching. An LLM UDF generates a precise sentiment score capturing emotional undertones in user reviews."
+  },
+  {
+    "unique_id": "sentiment_analysis_007",
+    "database_id": "app_store/user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, App TEXT, Translated_Review TEXT, Sentiment TEXT, Sentiment_Polarity FLOAT, Sentiment_Subjectivity FLOAT)",
+    "question": "Identify reviews with neutral sentiment (between -0.2 and 0.2)",
+    "expected_result": [
+      13501,
+      33619,
+      41871,
+      979,
+      17415
+    ],
+    "udf_justification": "Identifying neutral sentiment requires contextual understanding that goes beyond literal text interpretation. An LLM UDF can assess the balance of positive and negative elements to determine when a review is expressing minimal emotional content."
+  },
+  {
+    "unique_id": "sentiment_analysis_008",
+    "database_id": "app_store/user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "question": "Which is the most negative review?",
+    "expected_result": [
+      48423
+    ],
+    "udf_justification": "Standard SQL cannot analyze sentiment in text. An LLM UDF is needed to evaluate the emotional tone of reviews and assign a numerical score to determine which ones are strongly negative."
+  },
+  {
+    "unique_id": "sentiment_analysis_classify_001",
+    "database_id": "app_store/user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "question": "Which gaming app reviews have negative sentiment score?",
+    "expected_result": [
+      41871,
+      48423
+    ],
+    "udf_justification": "Analyzing sentiment in gaming-related reviews requires understanding domain-specific language and context. An LLM UDF can recognize negative expressions specific to gaming experiences and generate an appropriate sentiment score."
+  },
+  {
+    "unique_id": "analyze_sentiment_summarize_001",
+    "database_id": "card_games",
+    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT, summary TEXT)",
+    "question": "Which cards with positive (>0.5) flavor text sentiment also have complex rulings? Summarize the rulings.",
+    "expected_result": [
+      {
+        "uuid": "609cd717-5e92-5b4d-b04c-2e26b9965d2b",
+        "name": "Crested SunmareCrested Sunmare",
+        "summary": "Damage stays until cleanup. If Sunmare leaves after lethal Horse damage, it dies. Needs life gain before end step, not during."
+      },
+      {
+        "uuid": "a07e27bb-cacf-5e9b-b0d3-248eac66e035",
+        "name": "Helm of the Gods",
+        "summary": "You control Auras cast on opponent's permanents. They count for Helm of the Gods' bonus."
+      }
+    ],
+    "udf_justification": "Sentiment analysis is needed for evaluating emotional tone; summarization is needed to condense multiple rulings into one coherent explanation."
+  }
+]

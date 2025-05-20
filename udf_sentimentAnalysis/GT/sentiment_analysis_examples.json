@@ -1,8 +1,8 @@
 [
   {
     "unique_id": "sentiment_analysis_001",
-    "database_id": "card_games/cards_sample20",
-    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT)",
+    "database_id": "cards_sample20",
+    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT,flavorText TEXT)",
     "question": "Which cards have flavor text with negative sentiment?",
     "expected_result": [
       {
@@ -14,9 +14,9 @@
   },
   {
     "unique_id": "sentiment_analysis_002",
-    "database_id": "codebase/users20sample",
-    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY)",
-    "question": "Find users with AboutMe descriptions having a negative sentiment (score below -0.5)",
+    "database_id": "users20sample",
+    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY,AboutMe TEXT)",
+    "question": "Find users with AboutMe descriptions having a highly negative sentiment (score below -0.5)",
     "expected_result": [
       2609,
       2269
@@ -25,8 +25,8 @@
   },
   {
     "unique_id": "sentiment_analysis_003",
-    "database_id": "codebase/users20sample",
-    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY)",
+    "database_id": "users20sample",
+    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY,AboutMe TEXT)",
     "question": "Find user AboutMe descriptions with neutral sentiment (between 0.2 ,-0.2)",
     "expected_result": [
       41203,
@@ -36,8 +36,8 @@
   },
   {
     "unique_id": "sentiment_analysis_004",
-    "database_id": "card_games/rulings",
-    "table_schema": "CREATE TABLE rulings (\n  id INTEGER PRIMARY KEY)",
+    "database_id": "rulings",
+    "table_schema": "CREATE TABLE rulings (\n  id INTEGER PRIMARY KEY, text TEXT)",
     "question": "Find rulings with sentiment outside the neutral range (-0.2 to 0.2)",
     "expected_result": [
       38019,
@@ -49,20 +49,23 @@
   },
   {
     "unique_id": "sentiment_analysis_005",
-    "database_id": "app_store/user_reviews_sample",
-    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "database_id": "user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
     "question": "Which reviews have a negative sentiment score (below -0.3)?",
     "expected_result": [
       42339,
       40875,
-      57996
+      57996,
+      58675,
+      8188,
+      48423
     ],
     "udf_justification": "Standard SQL cannot analyze sentiment in text. An LLM UDF is needed to evaluate the emotional tone of reviews and assign a numerical score to determine which ones are strongly negative."
   },
   {
     "unique_id": "sentiment_analysis_006",
-    "database_id": "app_store/user_reviews_sample",
-    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "database_id": "user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
     "question": "Find reviews expressing highly positive sentiment (score above 0.5)",
     "expected_result": [
       28514,
@@ -75,8 +78,8 @@
   },
   {
     "unique_id": "sentiment_analysis_007",
-    "database_id": "app_store/user_reviews_sample",
-    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, App TEXT, Translated_Review TEXT, Sentiment TEXT, Sentiment_Polarity FLOAT, Sentiment_Subjectivity FLOAT)",
+    "database_id": "user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
     "question": "Identify reviews with neutral sentiment (between -0.2 and 0.2)",
     "expected_result": [
       13501,
@@ -89,8 +92,8 @@
   },
   {
     "unique_id": "sentiment_analysis_008",
-    "database_id": "app_store/user_reviews_sample",
-    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "database_id": "user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
     "question": "Which is the most negative review?",
     "expected_result": [
       48423
@@ -99,8 +102,8 @@
   },
   {
     "unique_id": "sentiment_analysis_classify_001",
-    "database_id": "app_store/user_reviews_sample",
-    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY)",
+    "database_id": "user_reviews_sample",
+    "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, App TEXT, Translated_Review TEXT)",
     "question": "Which gaming app reviews have negative sentiment score?",
     "expected_result": [
       41871,
@@ -110,9 +113,9 @@
   },
   {
     "unique_id": "analyze_sentiment_summarize_001",
-    "database_id": "card_games",
-    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT, summary TEXT)",
-    "question": "Which cards with positive (>0.5) flavor text sentiment also have complex rulings? Summarize the rulings.",
+    "database_id": "cards_sample20,rulings",
+    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT, summary TEXT),CREATE TABLE rulings (uuid TEXT PRIMARY KEY,text TEXT)",
+    "question": "Which cards with highly positive (>0.5) flavor text sentiment also have complex rulings? Summarize the rulings.",
     "expected_result": [
       {
         "uuid": "609cd717-5e92-5b4d-b04c-2e26b9965d2b",

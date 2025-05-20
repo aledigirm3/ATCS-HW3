@@ -49,8 +49,9 @@ def run_tests():
                 "actual": actual,
             })
     
+    json_results_path = project_root.parent / 'GT' / 'test_results.json'
     # Save results
-    with open('test_results.json', 'w') as f:
+    with open(json_results_path, 'w') as f:
         json.dump(test_results, f, indent=4)
 
 if __name__ == "__main__":

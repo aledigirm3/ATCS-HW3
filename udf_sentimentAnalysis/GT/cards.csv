@@ -1,0 +1,38 @@
+,id,uuid,name,flavorText,text,type,power,toughness
+0,6296,ceedc6a5-a4e3-59c4-884d-d85076d8616d,Esper Sojourners,"The wilder the frontier, the greater the need for a controlling hand.","When you cycle Esper Sojourners or it dies, you may tap or untap target permanent.
+Cycling {2}{U} ({2}{U}, Discard this card: Draw a card.)",Artifact Creature — Vedalken Wizard,2.0,3.0
+1,46590,fb2e5522-233a-547f-b600-b81701a2a29e,Twilight Prophet,,"Flying
+Ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)
+At the beginning of your upkeep, if you have the city's blessing, reveal the top card of your library and put it into your hand. Each opponent los",Creature — Vampire Cleric,2.0,4.0
+2,22025,609cd717-5e92-5b4d-b04c-2e26b9965d2b,Crested Sunmare,"""It is evidence that some pure corner of the world must still exist.""
+—Djeru, former Tah-crop initiate","Other Horses you control have indestructible.
+At the beginning of each end step, if you gained life this turn, create a 5/5 white Horse creature token.",Creature — Horse,5.0,5.0
+3,51563,4d40e2b6-9c14-574e-9096-a7974e7c03ca,Dream Stalker,What happens when it is the dream that wakes and the sleeper that fades into memory?,"When Dream Stalker enters the battlefield, return a permanent you control to its owner's hand.",Creature — Illusion,1.0,5.0
+4,18375,f5266746-23a5-56f6-8f8b-a317956203ca,Civic Wayfinder,"""These alleys are not safe. Come, I can guide you back to the market square.""","When Civic Wayfinder enters the battlefield, you may search your library for a basic land card, reveal it, and put it into your hand. If you do, shuffle your library.",Creature — Elf Druid Warrior,2.0,2.0
+5,10101,0d6962de-90fc-51ba-8246-bc794ae1ee57,Secluded Steppe,,"Secluded Steppe enters the battlefield tapped.
+{T}: Add {W}.
+Cycling {W} ({W}, Discard this card: Draw a card.)",Land,,
+6,16568,b42be0d3-320f-56c9-9464-9f6f9eb8f539,Karplusan Forest,,"{T}: Add {C}.
+{T}: Add {R} or {G}. Karplusan Forest deals 1 damage to you.",Land,,
+7,31851,16690c71-f09f-5c3a-bf28-ebdc8341be90,Diamond Mare,"When it passes, rainbows follow.","As Diamond Mare enters the battlefield, choose a color.
+Whenever you cast a spell of the chosen color, you gain 1 life.",Artifact Creature — Horse,1.0,3.0
+8,25218,fea48b09-0f75-525a-8506-034130c0f6b6,Blizzard Brawl,,"Choose target creature you control and target creature you don't control. If you control three or more snow permanents, the creature you control gets +1/+0 and gains indestructible until end of turn. Then those creatures fight each other. (Each deals dama",Snow Sorcery,,
+9,37149,a07e27bb-cacf-5e9b-b0d3-248eac66e035,Helm of the Gods,Its blessings are as numerous as the stars of Nyx.,"Equipped creature gets +1/+1 for each enchantment you control.
+Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",Artifact — Equipment,,
+10,3291,8c8d0389-4822-5f04-bd49-b6f58def95ad,Ancestral Memories,"""It's a poor sort of memory that only works backwards.""
+—Lewis Carroll,
+*Through the Looking Glass*",Look at the top seven cards of your library. Put two of them into your hand and the rest into your graveyard.,Sorcery,,
+11,20827,068275d5-00e8-5201-9a91-5d83f6d1b95b,Ostiary Thrull,Orzhov churches don't pass the plate for collection. They charge for admission.,"{W}, {T}: Tap target creature.",Creature — Thrull,2.0,2.0
+12,29037,025e196f-f895-5aab-a338-c3ea3a26a2fa,Necrobite,,"Target creature gains deathtouch until end of turn. Regenerate it. (The next time that creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat. Any amount of damage a creature with deathtouch d",Instant,,
+13,12667,6e965c11-1054-5008-b90c-d9a1da6a24ed,Evincar's Justice,,"Buyback {3} (You may pay an additional {3} as you cast this spell. If you do, put this card into your hand as it resolves.)
+Evincar's Justice deals 2 damage to each creature and each player.",Sorcery,,
+14,42151,45de08c2-14b8-5d4f-85c6-783735c2d66b,Tempered Steel,,Artifact creatures you control get +2/+2.,Enchantment,,
+15,44761,6bded0a1-5a83-5f68-b252-681e5de7ce1e,Lady Sun,"Sister to Sun Quan and wife to Liu Bei, Lady Sun often felt her loyalty to both tested.","{T}: Return Lady Sun and another target creature to their owners' hands. Activate this ability only during your turn, before attackers are declared.",Legendary Creature — Human Advisor,1.0,1.0
+16,25548,a0353866-85e4-545b-88ae-185095debe42,Revolutionary Rebuff,"By the time a Consulate sanction becomes official, the renegade quicksmiths have already found a way to circumvent it.",Counter target nonartifact spell unless its controller pays {2}.,Instant,,
+17,10066,15eab7ec-eae3-59a0-9744-3a2ca3c4d6b2,Dismal Backwater,,"Dismal Backwater enters the battlefield tapped.
+When Dismal Backwater enters the battlefield, you gain 1 life.
+{T}: Add {U} or {B}.",Land,,
+18,22327,a16252b5-83ec-5709-b42a-00fed3941629,Illusions of Grandeur,,"Cumulative upkeep {2} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
+When Illusions of Grandeur enters the battlefield, you gain 20 life.
+When Illusions",Enchantment,,
+19,36979,44aa02eb-c5ae-5a2b-9a1e-c72bde2feafc,Maritime Guard,"To stand as a guardian of the sea, one must possess the resolve of a mounting wave.",,Creature — Merfolk Soldier,1.0,3.0

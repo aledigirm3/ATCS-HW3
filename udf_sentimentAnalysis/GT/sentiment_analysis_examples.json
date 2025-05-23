@@ -1,22 +1,19 @@
 [
   {
     "unique_id": "sentiment_analysis_001",
-    "database_id": "cards_sample20",
+    "database_id": "cards",
     "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT,flavorText TEXT)",
-    "question": "Which cards have flavor text with negative sentiment?",
+    "question": "Which cards id have flavor text with negative sentiment?",
     "expected_result": [
-      {
-      "uuid": "068275d5-00e8-5201-9a91-5d83f6d1b95b",
-      "name": "Ostiary Thrull"
-      }
+      20827
     ],
     "udf_justification": "Standard SQL cannot analyze sentiment in text. An LLM UDF is needed to evaluate the emotional tone of flavorText."
   },
   {
     "unique_id": "sentiment_analysis_002",
-    "database_id": "users20sample",
+    "database_id": "users",
     "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY,AboutMe TEXT)",
-    "question": "Find users with AboutMe descriptions having a highly negative sentiment (score below -0.5)",
+    "question": "Find users id with AboutMe descriptions having a highly negative sentiment",
     "expected_result": [
       2609,
       2269
@@ -25,9 +22,9 @@
   },
   {
     "unique_id": "sentiment_analysis_003",
-    "database_id": "users20sample",
+    "database_id": "users",
     "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY,AboutMe TEXT)",
-    "question": "Find user AboutMe descriptions with neutral sentiment (between 0.2 ,-0.2)",
+    "question": "Find user by id with AboutMe descriptions with neutral sentiment",
     "expected_result": [
       41203,
       52599
@@ -38,7 +35,7 @@
     "unique_id": "sentiment_analysis_004",
     "database_id": "rulings",
     "table_schema": "CREATE TABLE rulings (\n  id INTEGER PRIMARY KEY, text TEXT)",
-    "question": "Find rulings with sentiment outside the neutral range (-0.2 to 0.2)",
+    "question": "Find rulings with sentiment outside the neutral range ",
     "expected_result": [
       38019,
       37243,
@@ -49,9 +46,9 @@
   },
   {
     "unique_id": "sentiment_analysis_005",
-    "database_id": "user_reviews_sample",
+    "database_id": "user_reviews",
     "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
-    "question": "Which reviews have a negative sentiment score (below -0.3)?",
+    "question": "Which reviews have a negative sentiment score?",
     "expected_result": [
       42339,
       40875,
@@ -64,9 +61,9 @@
   },
   {
     "unique_id": "sentiment_analysis_006",
-    "database_id": "user_reviews_sample",
+    "database_id": "user_reviews",
     "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
-    "question": "Find reviews expressing highly positive sentiment (score above 0.5)",
+    "question": "Find reviews expressing highly positive sentiment",
     "expected_result": [
       28514,
       169,
@@ -78,9 +75,9 @@
   },
   {
     "unique_id": "sentiment_analysis_007",
-    "database_id": "user_reviews_sample",
+    "database_id": "user_reviews",
     "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
-    "question": "Identify reviews with neutral sentiment (between -0.2 and 0.2)",
+    "question": "Identify reviews with neutral sentiment",
     "expected_result": [
       13501,
       33619,
@@ -92,9 +89,9 @@
   },
   {
     "unique_id": "sentiment_analysis_008",
-    "database_id": "user_reviews_sample",
+    "database_id": "user_reviews",
     "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, Translated_Review TEXT)",
-    "question": "Which is the most negative review?",
+    "question": "Which is the id of the most negative review?",
     "expected_result": [
       48423
     ],
@@ -102,9 +99,9 @@
   },
   {
     "unique_id": "sentiment_analysis_classify_001",
-    "database_id": "user_reviews_sample",
+    "database_id": "user_reviews",
     "table_schema": "CREATE TABLE user_reviews (id INTEGER PRIMARY KEY, App TEXT, Translated_Review TEXT)",
-    "question": "Which gaming app reviews have negative sentiment score?",
+    "question": "Which reviews are critical of a gaming app?",
     "expected_result": [
       41871,
       48423
@@ -113,18 +110,16 @@
   },
   {
     "unique_id": "analyze_sentiment_summarize_001",
-    "database_id": "cards_sample20,rulings",
+    "database_id": ["cards","rulings"],
     "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT, summary TEXT),CREATE TABLE rulings (uuid TEXT PRIMARY KEY,text TEXT)",
-    "question": "Which cards with highly positive (>0.5) flavor text sentiment also have complex rulings? Summarize the rulings.",
+    "question": "Which cards with highly positive flavor text sentiment also have complex rulings? Give me a list dictionaries with the card id and a summary of the rulings.",
     "expected_result": [
       {
-        "uuid": "609cd717-5e92-5b4d-b04c-2e26b9965d2b",
-        "name": "Crested SunmareCrested Sunmare",
+        "id": 22025,
         "summary": "Damage stays until cleanup. If Sunmare leaves after lethal Horse damage, it dies. Needs life gain before end step, not during."
       },
       {
-        "uuid": "a07e27bb-cacf-5e9b-b0d3-248eac66e035",
-        "name": "Helm of the Gods",
+        "id": 37149,
         "summary": "You control Auras cast on opponent's permanents. They count for Helm of the Gods' bonus."
       }
     ],

@@ -1,0 +1,108 @@
+[
+    {
+        "test_id": "sentiment_analysis_001",
+        "question": "Which cards id have flavor text with negative sentiment?",
+        "expected": [
+            20827
+        ],
+        "actual": "[3, 10]"
+    },
+    {
+        "test_id": "sentiment_analysis_002",
+        "question": "Find users id with AboutMe descriptions having a highly negative sentiment",
+        "expected": [
+            2609,
+            2269
+        ],
+        "actual": "[2609]"
+    },
+    {
+        "test_id": "sentiment_analysis_003",
+        "question": "Find user by id with AboutMe descriptions with neutral sentiment",
+        "expected": [
+            41203,
+            52599
+        ],
+        "actual": "[2609, 41203, 52599]"
+    },
+    {
+        "test_id": "sentiment_analysis_004",
+        "question": "Find rulings with sentiment outside the neutral range ",
+        "expected": [
+            38019,
+            37243,
+            61996,
+            84807
+        ],
+        "actual": "[]"
+    },
+    {
+        "test_id": "sentiment_analysis_005",
+        "question": "Which reviews have a negative sentiment score?",
+        "expected": [
+            42339,
+            40875,
+            57996,
+            58675,
+            8188,
+            48423
+        ],
+        "actual": "[13501, 42339, 40875, 58675, 17415, 40747, 48423, 57996]"
+    },
+    {
+        "test_id": "sentiment_analysis_006",
+        "question": "Find reviews expressing highly positive sentiment",
+        "expected": [
+            28514,
+            169,
+            60351,
+            43565,
+            19145
+        ],
+        "actual": "[60351, 169, 43565, 26404, 17132]"
+    },
+    {
+        "test_id": "sentiment_analysis_007",
+        "question": "Identify reviews with neutral sentiment",
+        "expected": [
+            13501,
+            33619,
+            41871,
+            979,
+            17415
+        ],
+        "actual": "[28514, 41871, 169, 43565, 17132, 26404, 19145]"
+    },
+    {
+        "test_id": "sentiment_analysis_008",
+        "question": "Which is the id of the most negative review?",
+        "expected": [
+            48423
+        ],
+        "actual": "8188"
+    },
+    {
+        "test_id": "sentiment_analysis_classify_001",
+        "question": "Which reviews are critical of a gaming app?",
+        "expected": [
+            41871,
+            48423
+        ],
+        "actual": "[42339, 8188, 57996, 40747]"
+    },
+    {
+        "test_id": "analyze_sentiment_summarize_001",
+        "question": "Which cards with highly positive flavor text sentiment also have complex rulings? Give me a list dictionaries with the card id and a summary of the rulings.",
+        "expected": [
+            {
+                "id": 22025,
+                "summary": "Damage stays until cleanup. If Sunmare leaves after lethal Horse damage, it dies. Needs life gain before end step, not during."
+            },
+            {
+                "id": 37149,
+                "summary": "You control Auras cast on opponent's permanents. They count for Helm of the Gods' bonus."
+            }
+        ],
+        "actual": "[{'id': 6296, 'rulings': 'When you cycle Esper Sojourners or it dies, you may tap or untap target permanent.'}, {'id': 46590, 'rulings': 'Flying\\nAscend (If you control ten or more permanents, you get the city\\'s blessing for the rest of the game.)\\nAt the beginning of your upkeep, if you have the city\\'s blessing, reveal the top card of your library and put it into your hand. Each opponent los'}, {'id': 22025, 'rulings': 'Other Horses you control have indestructible.\\nAt the beginning of each end step, if you gained life this turn, create a 5/5 white Horse creature token.'}, {'id': 51563, 'rulings': 'When Dream Stalker enters the battlefield, return a permanent you control to its owner\\'s hand.'}, {'id': 18375, 'rulings': 'When Civic Wayfinder enters the battlefield, you may search your library for a basic land card, reveal it, and put it into your hand. If you do, shuffle your library.'}]"
+    }
+]

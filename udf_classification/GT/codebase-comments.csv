@@ -1,0 +1,40 @@
+"id","text"
+"120325","Yes, but *how is it calculated*?  See the [Wikipedia article on pooled variance](http://en.wikipedia.org/wiki/Pooled_variance) to see what the issue is."
+
+"114338","@toomuchpj Unfortunately, my data are not distributed normally and all data transformations were unsuccessful. From what I've read about PROC MIXED, my data do not meet the assumptions of PROC MIXED modeling. Also, my temperature data is continuous. Thanks again for your input."
+
+"79372","Although ""OLS"" is common enough to be recognizable, what specifically do ""MoR"" and ""RoM"" stand for?"
+
+"70786","2). Also, one might want to simulate potential impact of a rare but extreme short-term event that causes high mortality in the population (i.e., hurricane, chemical spill, disease outbreak, etc). Of course one would have make some assumptions about how those events might change the population’s growth rate but could use the simulation results to inform wildlife managers as to potential effects by magnitude and duration of declines in population growth rates on the population’s trajectory. Those results could then be used to help inform planning and management decisions for the population."
+
+"196156","Yes. (This is an unusual use of the chi-square test, but I think your approach works for your purpose.)"
+
+"206689","Is there a particular field in which you want to apply your statistics knowledge (other than ""Statistics"", of course)? Because you might want to consider that as a tiebreaker. Or, compare the professors teaching the courses--it won't matter how useful the course ""should"" be if you're stuck with a lousy lecturer (conversely, a *great* professor is worth their weight in gold!)."
+
+"116090","You have not supplied enough information yet.  What is the assumed analytic model?  How would you like to distribute the samples in your particle filter?  Here is a not-unreasonable article on the topic, though not explicitly handling stock prices: http://tinyurl.com/lj97fbe"
+
+"194349","(i) Note that when using factors in R, `A*B` isn't an interaction term but a full model. The interaction term alone is `A:B`, and `A*B` means `A+B+A:B` (but this isn't why you are having a problem). (ii) The first thing you check when this happens is whether the interaction is nearly a linear combination of A and B."
+
+"49711","Are you referring to email addresses, as opposed to email text?  The question is not clear which item you are referring to (although possibly the exact item being sold is irrelevant to the question's answer).  I suppose that the OP actually means email addresses in this question."
+
+"20328","Thanks chi; can you suggest a tag for ""examples can be run on the web"" ?"
+
+"178583","Why don't you write down the log likelihood and differentiate that with respect to $\\mu$? Equating that to zero and solving will show you the correct solution."
+
+"185176","This question appears to be off-topic because it is about statistics; belongs on CrossValidated"
+
+"201843","@whuber:THank you for the link, it is really interesting reading it.I am unable to solve the problem of convolution & posted the working of it.Simply unable to follow the answer inspite of the illustration :("
+
+"200381","Are multisets (like $\\{1,1,1,1,9\\}$) as might be found with data excluded?"
+
+"192528","Right, that makes sense, so I'll have lets say 7 true positives, 2 false positives, 1 false negative and then 5990 true negatives for frames where nothing was detected and nothing should have been detected. Thank you, you have been really helpful :)"
+
+"194470","Hm...good point, I think I didn't ask the question properly. Edited to change the question."
+
+"171232","@Mark: I'm no longer have access to academic resources, so I can't give you a bibliography, but the search term ""Maximum Entropy Inference for Vector Quantization"" should get you a fairly good starting point. Does that help?"
+
+"111987","Thank you very much! The problem is really more complicated than I thought."
+
+"127273","However now we're somewhat making a compromise between the two worlds using data from the first and using it in the second and you're right that it's tricky. But intuition merges the binning (our information) and reconstruction (histogram/piecewise constant) into a single step, I'm just trying to say that the binning information can be successfully projected on a better space. However to make this clear full details are needed, I can prepare a short note on that."
+
+"196193","As I also said before, this error indicates that you have not fit the model using the training set. You can't evaluate it on test_set without fitting the model first using either fit or fit_transform. Please see my answer and the examples in the documentation of scikit-learn."

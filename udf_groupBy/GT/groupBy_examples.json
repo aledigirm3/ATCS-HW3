@@ -1,714 +1,240 @@
 [
   {
-    "unique_id": "groupby_009",
+    "unique_id": "groupby_001",
     "database_id": "location_users.csv",
     "table_schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, location TEXT)",
-    "question": "Raggruppa gli utenti in base alla nazione dedotta dalla citt\u00e0 indicata nel campo location",
-    "expected_result": [
-      {
-        "id": 1,
-        "country": "Germania"
-      },
-      {
-        "id": 2,
-        "country": "USA"
-      },
-      {
-        "id": 3,
-        "country": "Italia"
-      },
-      {
-        "id": 4,
-        "country": "Germania"
-      },
-      {
-        "id": 5,
-        "country": "USA"
-      },
-      {
-        "id": 6,
-        "country": "Italia"
-      },
-      {
-        "id": 7,
-        "country": "Germania"
-      },
-      {
-        "id": 8,
-        "country": "USA"
-      },
-      {
-        "id": 9,
-        "country": "Italia"
-      },
-      {
-        "id": 10,
-        "country": "Germania"
-      },
-      {
-        "id": 11,
-        "country": "USA"
-      },
-      {
-        "id": 12,
-        "country": "Italia"
-      },
-      {
-        "id": 13,
-        "country": "Germania"
-      },
-      {
-        "id": 14,
-        "country": "USA"
-      },
-      {
-        "id": 15,
-        "country": "Italia"
-      },
-      {
-        "id": 16,
-        "country": "Germania"
-      },
-      {
-        "id": 17,
-        "country": "USA"
-      },
-      {
-        "id": 18,
-        "country": "Italia"
-      },
-      {
-        "id": 19,
-        "country": "Germania"
-      },
-      {
-        "id": 20,
-        "country": "USA"
-      }
-    ],
-    "udf_justification": "Un UDF \u00e8 necessario per dedurre la nazione da una citt\u00e0, dato che SQL non ha accesso a conoscenza geografica contestuale."
+    "question": "Raggruppa gli utenti in base alla nazione dedotta dalla città indicata nel campo location",
+    "group_field": "country",
+    "expected_result": {
+      "Germany": [{"id": 1}, {"id": 7}, {"id": 80}, {"id": 24}],
+      "America": [{"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}, {"id": 6}, {"id": 11}, {"id": 13}, {"id": 18}, {"id": 19}, {"id": 25}],
+      "England": [{"id": 8}, {"id": 81}],
+      "France": [{"id": 10}],
+      "Portugal": [{"id": 12}],
+      "Switzerland": [{"id": 22}],
+      "Italy": [{"id": 82}, {"id": 23}]
+    },
+    "results_gpt":{
+      "Germany": [{"id": 1}, {"id": 7}, {"id": 24}],
+      "America": [{"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}, {"id": 6}, {"id": 11}, {"id": 13}, {"id": 18}, {"id": 19}, {"id": 25}],
+      "England": [{"id": 8}],
+      "France": [{"id": 10}],
+      "Portugal": [{"id": 12}],
+      "Switzerland": [{"id": 22}],
+      "Italy": [{"id": 23}],
+      "Other": [{"id": 80},{"id": 81}]
+
+    },
+    "results_claude4Sonnet": {
+      "Germany": [{"id": 1}, {"id": 7}, {"id": 80}, {"id": 24}],
+      "America": [{"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}, {"id": 6}, {"id": 11}, {"id": 13}, {"id": 18}, {"id": 19}, {"id": 25}],
+      "England": [{"id": 8}, {"id": 81}],
+      "France": [{"id": 10}],
+      "Portugal": [{"id": 12}],
+      "Switzerland": [{"id": 22}],
+      "Italy": [{"id": 82}, {"id": 23}]
+    },
+    "udf_justification": "Un UDF è necessario per dedurre la nazione da una città, dato che SQL non ha accesso a conoscenza geografica contestuale."
   },
   {
-    "unique_id": "groupby_010",
+    "unique_id": "groupby_002",
     "database_id": "aboutme_users.csv",
     "table_schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, aboutme TEXT)",
-    "question": "Raggruppa gli utenti per caratteristiche di personalit\u00e0 simili dedotte dal campo aboutme",
-    "expected_result": [
-      {
-        "id": 1,
-        "personality": "Introverso"
-      },
-      {
-        "id": 2,
-        "personality": "Estroverso"
-      },
-      {
-        "id": 3,
-        "personality": "Analitico"
-      },
-      {
-        "id": 4,
-        "personality": "Introverso"
-      },
-      {
-        "id": 5,
-        "personality": "Estroverso"
-      },
-      {
-        "id": 6,
-        "personality": "Analitico"
-      },
-      {
-        "id": 7,
-        "personality": "Introverso"
-      },
-      {
-        "id": 8,
-        "personality": "Estroverso"
-      },
-      {
-        "id": 9,
-        "personality": "Analitico"
-      },
-      {
-        "id": 10,
-        "personality": "Introverso"
-      },
-      {
-        "id": 11,
-        "personality": "Estroverso"
-      },
-      {
-        "id": 12,
-        "personality": "Analitico"
-      },
-      {
-        "id": 13,
-        "personality": "Introverso"
-      },
-      {
-        "id": 14,
-        "personality": "Estroverso"
-      },
-      {
-        "id": 15,
-        "personality": "Analitico"
-      },
-      {
-        "id": 16,
-        "personality": "Introverso"
-      },
-      {
-        "id": 17,
-        "personality": "Estroverso"
-      },
-      {
-        "id": 18,
-        "personality": "Analitico"
-      },
-      {
-        "id": 19,
-        "personality": "Introverso"
-      },
-      {
-        "id": 20,
-        "personality": "Estroverso"
-      }
-    ],
-    "udf_justification": "Serve un UDF per interpretare il linguaggio e dedurre tratti psicologici dalle descrizioni personali testuali."
+    "question": "Raggruppa gli utenti per ruoli simili nel campo aboutme",
+    "group_field": "role",
+    "expected_result": {
+      "Developer": [{"id": 2}, {"id": 3}],
+      "Academic": [ {"id": 19},{"id": 8}],
+      "Student": [{"id": 13}, {"id": 15}, {"id": 17}],
+      "Designer": [{"id": 12}],
+      "Data Scientist": [{"id": 7}, {"id": 10}, {"id": 11}],
+      "Researcher": [{"id": 5},{"id": 6}, {"id": 22}],
+      "Engineer": [{"id": 16}, {"id": 18}],
+      "System Admin": [{"id": -1}],
+      "Other": [{"id": 4}, {"id": 21}, {"id": 47}, {"id": 80}]
+    },
+    "results_gpt":{
+      "Developer": [{"id": 2}, {"id": 3}],
+      "Academic": [{"id": 8}, {"id": 19}],
+      "Student": [{"id": 13}, {"id": 15}, {"id": 17}],
+      "Designer": [{"id": 12}],
+      "Data Scientist": [{"id": 7}, {"id": 10}, {"id": 11}],
+      "Researcher": [{"id": 5}, {"id": 6}, {"id": 22}],
+      "Engineer": [{"id": 16}, {"id": 18}],
+      "System Admin": [{"id": -1}],
+      "Other": [{"id": 4}, {"id": 21}, {"id": 47}, {"id": 80}]
+    },
+    "results_claude4Sonnet": {
+      "Developer": [{"id": 2}, {"id": 3}, {"id": 4}, {"id": 18}],
+      "Academic": [{"id": 8}, {"id": 19}],
+      "Student": [{"id": 13}, {"id": 15}, {"id": 17}],
+      "Designer": [{"id": 12}],
+      "Data Scientist": [{"id": 5}, {"id": 6}, {"id": 7}, {"id": 10}, {"id": 11}],
+      "Researcher": [{"id": 22}],
+      "Engineer": [{"id": 16}],
+      "System Admin": [{"id": -1}],
+      "Other": [{"id": 21}, {"id": 47}, {"id": 80}]
+    },
+    "udf_justification": "Serve un UDF per interpretare il linguaggio e dedurre ruoli professionali dalle descrizioni personali testuali."
   },
   {
-    "unique_id": "groupby_011",
+    "unique_id": "groupby_003",
     "database_id": "superpower_power.csv",
     "table_schema": "CREATE TABLE superpower_power (id INTEGER PRIMARY KEY, power_name TEXT)",
-    "question": "Raggruppa i superpoteri per elemento naturale associato (fuoco, acqua, aria, terra, elettricit\u00e0, mente)",
-    "expected_result": [
-      {
-        "id": 1,
-        "element": "Aria"
-      },
-      {
-        "id": 2,
-        "element": "Acqua"
-      },
-      {
-        "id": 3,
-        "element": "Fuoco"
-      },
-      {
-        "id": 4,
-        "element": "Aria"
-      },
-      {
-        "id": 5,
-        "element": "Acqua"
-      },
-      {
-        "id": 6,
-        "element": "Fuoco"
-      },
-      {
-        "id": 7,
-        "element": "Aria"
-      },
-      {
-        "id": 8,
-        "element": "Acqua"
-      },
-      {
-        "id": 9,
-        "element": "Fuoco"
-      },
-      {
-        "id": 10,
-        "element": "Aria"
-      },
-      {
-        "id": 11,
-        "element": "Acqua"
-      },
-      {
-        "id": 12,
-        "element": "Fuoco"
-      },
-      {
-        "id": 13,
-        "element": "Aria"
-      },
-      {
-        "id": 14,
-        "element": "Acqua"
-      },
-      {
-        "id": 15,
-        "element": "Fuoco"
-      },
-      {
-        "id": 16,
-        "element": "Aria"
-      },
-      {
-        "id": 17,
-        "element": "Acqua"
-      },
-      {
-        "id": 18,
-        "element": "Fuoco"
-      },
-      {
-        "id": 19,
-        "element": "Aria"
-      },
-      {
-        "id": 20,
-        "element": "Acqua"
-      }
-    ],
-    "udf_justification": "Serve un UDF per collegare semanticamente il nome del superpotere a un elemento naturale che pu\u00f2 essere solo implicito."
+    "question": "Raggruppa i superpoteri per elemento naturale associato (mentale, fisico, combattimento , energetici)",
+    "group_field": "element",
+    "expected_result": {
+      "Fisico": [{"id": 1}, {"id": 2}, {"id": 5}, {"id": 6}, {"id": 11}, {"id": 15}, {"id": 16}, {"id": 18}],
+      "Energetico": [{"id": 3}, {"id": 8}, {"id": 9}, {"id": 19}, {"id": 21}],
+      "Mentale": [{"id": 4}, {"id": 10}, {"id": 17}, {"id": 20}],
+      "Combattimento": [{"id": 7}, {"id": 12}, {"id": 13}, {"id": 14}]
+    },
+    "results_gpt":{
+      "Fisico": [{"id": 1}, {"id": 2}, {"id": 18}],
+      "Energetico": [{"id": 3}, {"id": 8}, {"id": 9}, {"id": 21}],
+      "Mentale": [{"id": 4}, {"id": 10}, {"id": 17}, {"id": 20}],
+      "Combattimento": [{"id": 7}, {"id": 12}, {"id": 13}, {"id": 14}],
+      "Other": [{"id": 5}, {"id": 6}, {"id": 11}, {"id": 15}, {"id": 16}, {"id": 19}]
+    },
+    "results_claude4Sonnet": {
+      "Fisico": [{"id": 1}, {"id": 2}, {"id": 4}, {"id": 5}, {"id": 6}, {"id": 7}, {"id": 9}, {"id": 10}, {"id": 11}, {"id": 14}, {"id": 15}, {"id": 16}, {"id": 17}, {"id": 18}, {"id": 19}],
+      "Energetico": [{"id": 3}, {"id": 8}, {"id": 21}],
+      "Mentale": [{"id": 20}],
+      "Combattimento": [{"id": 12}, {"id": 13}]
+    },
+    "udf_justification": "Serve un UDF per classificare i superpoteri secondo categorie naturali come fisico, mentale, combattimento o energetico."
   },
   {
-    "unique_id": "groupby_012",
+    "unique_id": "groupby_004",
     "database_id": "name_superhero.csv",
     "table_schema": "CREATE TABLE name_superhero (id INTEGER PRIMARY KEY, superhero_name TEXT)",
-    "question": "Raggruppa i supereroi per genere (maschile, femminile) usando solo il nome",
-    "expected_result": [
-      {
-        "id": 1,
-        "gender": "Femminile"
-      },
-      {
-        "id": 2,
-        "gender": "Maschile"
-      },
-      {
-        "id": 3,
-        "gender": "Femminile"
-      },
-      {
-        "id": 4,
-        "gender": "Maschile"
-      },
-      {
-        "id": 5,
-        "gender": "Femminile"
-      },
-      {
-        "id": 6,
-        "gender": "Maschile"
-      },
-      {
-        "id": 7,
-        "gender": "Femminile"
-      },
-      {
-        "id": 8,
-        "gender": "Maschile"
-      },
-      {
-        "id": 9,
-        "gender": "Femminile"
-      },
-      {
-        "id": 10,
-        "gender": "Maschile"
-      },
-      {
-        "id": 11,
-        "gender": "Femminile"
-      },
-      {
-        "id": 12,
-        "gender": "Maschile"
-      },
-      {
-        "id": 13,
-        "gender": "Femminile"
-      },
-      {
-        "id": 14,
-        "gender": "Maschile"
-      },
-      {
-        "id": 15,
-        "gender": "Femminile"
-      },
-      {
-        "id": 16,
-        "gender": "Maschile"
-      },
-      {
-        "id": 17,
-        "gender": "Femminile"
-      },
-      {
-        "id": 18,
-        "gender": "Maschile"
-      },
-      {
-        "id": 19,
-        "gender": "Femminile"
-      },
-      {
-        "id": 20,
-        "gender": "Maschile"
-      }
-    ],
-    "udf_justification": "Serve un UDF per inferire il genere del supereroe partendo dal nome, anche in assenza di un'informazione esplicita."
+    "question": "Raggruppa i supereroi per casa di produzione (Marvel, DC, Other, Dark Horse) usando solo il nome",
+    "group_field": "category",
+    "expected_result": {
+      "Marvel": [{"id": 1}, {"id": 2}, {"id": 5}, {"id": 6}, {"id": 7}, {"id": 8}, {"id": 10}, {"id": 11}, {"id": 12}, {"id": 13}, {"id": 14}],
+      "DC": [{"id": 4}, {"id": 9}, {"id": 15}, {"id": 18}, {"id": 20}, {"id": 21}],
+      "Dark Horse": [{"id": 3}],
+      "Other": [{"id": 16}, {"id": 17}, {"id": 19}]
+    },
+    "results_gpt":{
+      "Marvel": [{"id": 1}, {"id": 2}, {"id": 5}, {"id": 6}, {"id": 7}, {"id": 8}, {"id": 10}, {"id": 11}, {"id": 12}, {"id": 13}, {"id": 14}],
+      "DC": [{"id": 4}, {"id": 9}, {"id": 15}, {"id": 18}, {"id": 20}, {"id": 21}],
+      "Dark Horse": [{"id": 3}],
+      "Other": [{"id": 16}, {"id": 17}, {"id": 19}]
+    },
+    "results_claude4Sonnet": {
+      "Marvel": [{"id": 1}, {"id": 2}, {"id": 5}, {"id": 6}, {"id": 7}, {"id": 10}, {"id": 11}, {"id": 12}, {"id": 13}, {"id": 14}],
+      "DC": [{"id": 4}, {"id": 9}, {"id": 15}, {"id": 18}, {"id": 21}],
+      "Dark Horse": [{"id": 3}],
+      "Other": [{"id": 8}, {"id": 16}, {"id": 17}, {"id": 19}, {"id": 20}]
+    },
+    "udf_justification": "Serve un UDF per inferire la casa di produzione del supereroe partendo dal nome, anche in assenza di un'informazione esplicita."
   },
   {
-    "unique_id": "groupby_013",
-    "database_id": "text_comments.csv",
-    "table_schema": "CREATE TABLE text_comments (id INTEGER PRIMARY KEY, comment TEXT)",
-    "question": "Raggruppa i commenti in base alla loro posizione (concorda, disaccordo, dubbio)",
-    "expected_result": [
-      {
-        "id": 1,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 2,
-        "stance": "Concorda"
-      },
-      {
-        "id": 3,
-        "stance": "Disaccordo"
-      },
-      {
-        "id": 4,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 5,
-        "stance": "Concorda"
-      },
-      {
-        "id": 6,
-        "stance": "Disaccordo"
-      },
-      {
-        "id": 7,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 8,
-        "stance": "Concorda"
-      },
-      {
-        "id": 9,
-        "stance": "Disaccordo"
-      },
-      {
-        "id": 10,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 11,
-        "stance": "Concorda"
-      },
-      {
-        "id": 12,
-        "stance": "Disaccordo"
-      },
-      {
-        "id": 13,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 14,
-        "stance": "Concorda"
-      },
-      {
-        "id": 15,
-        "stance": "Disaccordo"
-      },
-      {
-        "id": 16,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 17,
-        "stance": "Concorda"
-      },
-      {
-        "id": 18,
-        "stance": "Disaccordo"
-      },
-      {
-        "id": 19,
-        "stance": "Dubbio"
-      },
-      {
-        "id": 20,
-        "stance": "Concorda"
-      }
-    ],
-    "udf_justification": "Serve un UDF per determinare l\u2019atteggiamento espresso nei commenti attraverso un\u2019analisi semantica avanzata del contenuto."
-  },
-  {
-    "unique_id": "groupby_014",
-    "database_id": "diagnosis_patient.csv",
-    "table_schema": "CREATE TABLE patient (id INTEGER PRIMARY KEY, diagnosis TEXT)",
-    "question": "Raggruppa le diagnosi mediche per gravit\u00e0 stimata (lieve, moderata, grave)",
-    "expected_result": [
-      {
-        "id": 1,
-        "severity": "Lieve"
-      },
-      {
-        "id": 2,
-        "severity": "Moderata"
-      },
-      {
-        "id": 3,
-        "severity": "Grave"
-      },
-      {
-        "id": 4,
-        "severity": "Lieve"
-      },
-      {
-        "id": 5,
-        "severity": "Moderata"
-      },
-      {
-        "id": 6,
-        "severity": "Grave"
-      },
-      {
-        "id": 7,
-        "severity": "Lieve"
-      },
-      {
-        "id": 8,
-        "severity": "Moderata"
-      },
-      {
-        "id": 9,
-        "severity": "Grave"
-      },
-      {
-        "id": 10,
-        "severity": "Lieve"
-      },
-      {
-        "id": 11,
-        "severity": "Moderata"
-      },
-      {
-        "id": 12,
-        "severity": "Grave"
-      },
-      {
-        "id": 13,
-        "severity": "Lieve"
-      },
-      {
-        "id": 14,
-        "severity": "Moderata"
-      },
-      {
-        "id": 15,
-        "severity": "Grave"
-      },
-      {
-        "id": 16,
-        "severity": "Lieve"
-      },
-      {
-        "id": 17,
-        "severity": "Moderata"
-      },
-      {
-        "id": 18,
-        "severity": "Grave"
-      },
-      {
-        "id": 19,
-        "severity": "Lieve"
-      },
-      {
-        "id": 20,
-        "severity": "Moderata"
-      }
-    ],
-    "udf_justification": "Un UDF pu\u00f2 stimare la gravit\u00e0 di una diagnosi da sigle o abbreviazioni mediche usando conoscenza clinica."
-  },
-  {
-    "unique_id": "groupby_015",
+    "unique_id": "groupby_005",
     "database_id": "diagnosis_patient.csv",
     "table_schema": "CREATE TABLE patient (id INTEGER PRIMARY KEY, diagnosis TEXT)",
     "question": "Raggruppa le diagnosi mediche per prospettiva di vita (buona, incerta, severa)",
-    "expected_result": [
-      {
-        "id": 1,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 2,
-        "prognosis": "Severa"
-      },
-      {
-        "id": 3,
-        "prognosis": "Buona"
-      },
-      {
-        "id": 4,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 5,
-        "prognosis": "Severa"
-      },
-      {
-        "id": 6,
-        "prognosis": "Buona"
-      },
-      {
-        "id": 7,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 8,
-        "prognosis": "Severa"
-      },
-      {
-        "id": 9,
-        "prognosis": "Buona"
-      },
-      {
-        "id": 10,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 11,
-        "prognosis": "Severa"
-      },
-      {
-        "id": 12,
-        "prognosis": "Buona"
-      },
-      {
-        "id": 13,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 14,
-        "prognosis": "Severa"
-      },
-      {
-        "id": 15,
-        "prognosis": "Buona"
-      },
-      {
-        "id": 16,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 17,
-        "prognosis": "Severa"
-      },
-      {
-        "id": 18,
-        "prognosis": "Buona"
-      },
-      {
-        "id": 19,
-        "prognosis": "Incerta"
-      },
-      {
-        "id": 20,
-        "prognosis": "Severa"
-      }
-    ],
+    "group_field": "prognosis",
+    "expected_result": {
+      "Buona": [{ "id": 52199 }, { "id": 58139 }, { "id": 108788 }, { "id": 115272 },{ "id": 122320 }, { "id": 122405 }, { "id": 125619 }],
+      "Incerta": [{ "id": 2110 }, { "id": 27654 }],
+      "Severa": [{ "id": 11408 }, { "id": 12052 }, { "id": 14872 }, { "id": 30609 },{ "id": 43003 }, { "id": 48473 }, { "id": 57266 }, { "id": 71417 },{ "id": 81043 }, { "id": 102490 }, { "id": 115562 }, { "id": 115575 }]
+    },
+    "results_gpt":{
+      "Buona": [{"id": 52199}, {"id": 58139}, {"id": 108788}, {"id": 115272}, {"id": 122320}, {"id": 122405}, {"id": 125619}],
+      "Incerta": [{"id": 2110}, {"id": 27654}],
+      "Severa": [{"id": 11408}, {"id": 12052}, {"id": 14872}, {"id": 30609}, {"id": 43003}, {"id": 48473}, {"id": 57266}, {"id": 71417}, {"id": 81043}, {"id": 102490}, {"id": 115562}, {"id": 115575}]
+    },
+    "results_claude4Sonnet": {
+      "Buona": [{"id": 52199}, {"id": 58139}, {"id": 108788}, {"id": 115272}, {"id": 122320}, {"id": 122405}, {"id": 125619}],
+      "Incerta": [{"id": 2110}],
+      "Severa": [{"id": 11408}, {"id": 12052}, {"id": 14872}, {"id": 27654}, {"id": 30609}, {"id": 43003}, {"id": 48473}, {"id": 57266}, {"id": 71417}, {"id": 81043}, {"id": 102490}, {"id": 115562}, {"id": 115575}]
+    },
     "udf_justification": "Serve un UDF per stimare la prognosi sulla base della diagnosi medica, una valutazione complessa da inferire automaticamente."
   },
   {
-    "unique_id": "groupby_016",
+    "unique_id": "groupby_006",
+    "database_id": "diagnosis_patient.csv",
+    "table_schema": "CREATE TABLE patient (id INTEGER PRIMARY KEY, diagnosis TEXT)",
+    "question": "Raggruppa le diagnosi mediche in base alla gravità (alta, media, bassa)",
+    "group_field": "gravity",
+    "expected_result": {
+      "Alta": [{ "id": 12052 }, { "id": 14872 }, { "id": 27654 }, { "id": 30609 },{ "id": 48473 }, { "id": 81043 }, { "id": 115562 }, { "id": 115575 }],
+      "Media": [{ "id": 2110 }, { "id": 11408 }, { "id": 43003 },{ "id": 57266 }, { "id": 71417 }, { "id": 102490 }],
+      "Bassa": [{ "id": 52199 }, { "id": 58139 }, { "id": 108788 },{ "id": 115272 }, { "id": 122320 }, { "id": 122405 }, { "id": 125619 }]
+    },
+    "results_gpt":{
+      "Alta": [{"id": 12052}, {"id": 14872}, {"id": 27654}, {"id": 30609}, {"id": 48473}, {"id": 81043}, {"id": 115562}, {"id": 115575}],
+      "Media": [{"id": 2110}, {"id": 11408}, {"id": 43003}, {"id": 57266}, {"id": 71417}, {"id": 102490}],
+      "Bassa": [{"id": 52199}, {"id": 58139}, {"id": 108788}, {"id": 115272}, {"id": 122320}, {"id": 122405}, {"id": 125619}]
+    },
+    "results_claude4Sonnet": {
+      "Alta": [{"id": 11408}, {"id": 12052}, {"id": 27654}, {"id": 30609}, {"id": 48473}, {"id": 102490}, {"id": 115562}, {"id": 115575}],
+      "Media": [{"id": 2110}],
+      "Bassa": [{"id": 14872}, {"id": 43003}, {"id": 52199}, {"id": 57266}, {"id": 58139}, {"id": 71417}, {"id": 81043}, {"id": 108788}, {"id": 115272}, {"id": 122320}, {"id": 122405}, {"id": 125619}]
+    },
+    "udf_justification": "Serve un UDF per inferire la gravità clinica di una diagnosi, sulla base della terminologia e del contesto medico."
+  },
+  {
+    "unique_id": "groupby_007",
     "database_id": "text_cards.csv",
     "table_schema": "CREATE TABLE cards (id INTEGER PRIMARY KEY, text TEXT)",
-    "question": "Raggruppa le carte in base alla loro funzionalit\u00e0 (attacco, difesa, supporto, manipolazione del tempo)",
-    "expected_result": [
-      {
-        "id": 1,
-        "function": "Difesa"
-      },
-      {
-        "id": 2,
-        "function": "Supporto"
-      },
-      {
-        "id": 3,
-        "function": "Attacco"
-      },
-      {
-        "id": 4,
-        "function": "Difesa"
-      },
-      {
-        "id": 5,
-        "function": "Supporto"
-      },
-      {
-        "id": 6,
-        "function": "Attacco"
-      },
-      {
-        "id": 7,
-        "function": "Difesa"
-      },
-      {
-        "id": 8,
-        "function": "Supporto"
-      },
-      {
-        "id": 9,
-        "function": "Attacco"
-      },
-      {
-        "id": 10,
-        "function": "Difesa"
-      },
-      {
-        "id": 11,
-        "function": "Supporto"
-      },
-      {
-        "id": 12,
-        "function": "Attacco"
-      },
-      {
-        "id": 13,
-        "function": "Difesa"
-      },
-      {
-        "id": 14,
-        "function": "Supporto"
-      },
-      {
-        "id": 15,
-        "function": "Attacco"
-      },
-      {
-        "id": 16,
-        "function": "Difesa"
-      },
-      {
-        "id": 17,
-        "function": "Supporto"
-      },
-      {
-        "id": 18,
-        "function": "Attacco"
-      },
-      {
-        "id": 19,
-        "function": "Difesa"
-      },
-      {
-        "id": 20,
-        "function": "Supporto"
-      }
-    ],
-    "udf_justification": "Un UDF \u00e8 necessario per dedurre la funzionalit\u00e0 della carta attraverso l\u2019interpretazione semantica del testo di descrizione."
+    "question": "Raggruppa le carte per funzionalità simili",
+    "group_field": "function",
+    "expected_result": {
+      "Volare": [{ "id": 2 }, { "id": 3 }, { "id": 16 }],
+      "Danno": [{ "id": 1 }, { "id": 4 }, { "id": 5 }, { "id": 7 }, { "id": 8 },{ "id": 9 }, { "id": 12 }, { "id": 15 }, { "id": 19 }, { "id": 20 }],
+      "Difesa": [],
+      "Pesca": [{ "id": 11 }, { "id": 14 }],
+      "Vita": [{ "id": 6 }, { "id": 10 }],
+      "Attivazione": [],
+      "Colpo speciale": [],
+      "Altro": [{ "id": 13 }, { "id": 17 },{ "id": 18 }, { "id": 21 }]
+    },
+    "results_gpt":{
+      "Volare": [{"id": 2}, {"id": 3}, {"id": 16}],
+      "Danno": [{"id": 1}, {"id": 4}, {"id": 5}, {"id": 7}, {"id": 8}, {"id": 9}, {"id": 12}, {"id": 15}, {"id": 19}, {"id": 20}],
+      "Difesa": [],
+      "Pesca": [],
+      "Vita": [{"id": 6}, {"id": 10}],
+      "Attivazione": [{"id": 17}],
+      "Colpo speciale": [],
+      "Altro": [{"id": 13}, {"id": 18}, {"id": 21},{"id": 11}, {"id": 14}]
+    },
+    "results_claude4Sonnet": {
+      "Volare": [{"id": 2}, {"id": 3}, {"id": 16}],
+      "Danno": [{"id": 1}, {"id": 4}, {"id": 5}, {"id": 7}, {"id": 8}, {"id": 9}, {"id": 12}, {"id": 13}, {"id": 15}, {"id": 19}, {"id": 20}],
+      "Difesa": [],
+      "Pesca": [],
+      "Vita": [{"id": 10}],
+      "Attivazione": [{ "id": 17 }],
+      "Colpo speciale": [],
+      "Altro": [{"id": 6}, {"id": 11}, {"id": 14}, {"id": 18}, {"id": 21}]
+    },
+    "udf_justification": "Serve un UDF per raggruppare le carte in base alle funzionalità descritte nel testo, identificando abilità come volare, infliggere danno, guadagnare vita, ecc."
+  },
+  {
+    "unique_id": "groupby_008",
+    "database_id": "text_comments.csv",
+    "table_schema": "CREATE TABLE text_comments (id INTEGER PRIMARY KEY, comment TEXT)",
+    "question": "Raggruppa i commenti in base al tipo di linguaggio usato: formale, informale, tecnico.",
+    "group_field": "language_style",
+    "expected_result": {
+      "Informale": [{ "id": 1 }, { "id": 2 }, { "id": 3 }, { "id": 4 }, { "id": 5 },{ "id": 6 }, { "id": 7 }, { "id": 9 }, { "id": 10 }, { "id": 11 },{ "id": 12 }, { "id": 13 }, { "id": 14 }, { "id": 15 }, { "id": 16 },{ "id": 19 }, { "id": 20 }, { "id": 21 }, { "id": 22 }, { "id": 23 }],
+      "Formale": [{ "id": 18 }],
+      "Tecnico": []
+    },
+    "results_gpt":{
+      "Informale": [{"id": 1}, {"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}, {"id": 6}, {"id": 7}, {"id": 8}, {"id": 9}, {"id": 11}, {"id": 12}, {"id": 13}, {"id": 14}, {"id": 15}, {"id": 17}, {"id": 18}, {"id": 19}, {"id": 20}, {"id": 21}, {"id": 23}],
+       "Formale": [{"id": 10}, {"id": 16}, {"id": 22}],
+       "Tecnico": []
+    },
+    "results_claude4Sonnet": {
+      "Informale": [{"id": 1}, {"id": 2}, {"id": 3}, {"id": 4}, {"id": 5}, {"id": 6}, {"id": 7}, {"id": 9}, {"id": 11}, {"id": 12}, {"id": 13}, {"id": 14}, {"id": 15}, {"id": 18}, {"id": 19}, {"id": 20}, {"id": 21}, {"id": 23}],
+      "Formale": [{"id": 10}, {"id": 16}, {"id": 22}],
+      "Tecnico": []
+    },
+    "udf_justification": "È necessario un UDF linguistico per classificare il registro testuale del commento (formale, informale, tecnico) basandosi su lessico e costruzioni sintattiche."
   }
 ]

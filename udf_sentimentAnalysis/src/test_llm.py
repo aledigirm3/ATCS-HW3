@@ -1,8 +1,7 @@
 import os
 from dotenv import load_dotenv
 import json
-from src.tableQA import UDFTableQA
-from evaluation import evaluate_examples
+from tableQA import UDFTableQA
 from pathlib import Path
 from utils import get_project_root
 
@@ -41,7 +40,7 @@ def main():
             "actual": result,
             })
 
-        json_results_path = get_project_root().parent/ 'Results' / 'test_results.json'
+        json_results_path = get_project_root().parent/ 'Results' / 'test_results_DeepSeek.json'
         # Save results
         with open(json_results_path, 'w') as f:
             json.dump(test_results, f, indent=4)

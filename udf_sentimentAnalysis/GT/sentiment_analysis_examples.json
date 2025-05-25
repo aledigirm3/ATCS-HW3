@@ -2,7 +2,7 @@
   {
     "unique_id": "sentiment_analysis_001",
     "database_id": "cards",
-    "table_schema": "CREATE TABLE cards (uuid TEXT PRIMARY KEY, name TEXT,flavorText TEXT)",
+    "table_schema": "CREATE TABLE cards (id TEXT PRIMARY KEY, name TEXT,flavorText TEXT)",
     "question": "Which cards id have flavor text with negative sentiment?",
     "expected_result": [
       20827

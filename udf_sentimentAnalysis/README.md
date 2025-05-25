@@ -9,7 +9,7 @@ This repository contains resources to evaluate a Large Language Model (LLM) on s
 - **Data Tables**: Supporting tables containing the data necessary to answer the questions.
 
 ### `src/` (Source Code)
-- **`test_llm.py`**: Script to query a language model with the questions from `sentiment_analysis_example.json`. Supports both zero-shot and few-shot prompting strategies.
+- **`test_llm.py`**: Script to query a language model with the questions from `sentiment_analysis_example.json`.
 - **`evaluation.py`**: Script to evaluate the LLM's responses against the ground truth. Outputs evaluation results in JSON format, saved in a separate folder.
 
 ### `Results/`
@@ -25,7 +25,7 @@ Install Python 3.11.11. Execute the following command.
 
 ```bash
 git clone https://github.com/aledigirm3/ATCS-HW3.git
-cd ATCS-HW3/udf_sentimentAnalisys
+cd ATCS-HW3/udf_sentimentAnalysis
 pip install -r requirements.txt
 ```
 

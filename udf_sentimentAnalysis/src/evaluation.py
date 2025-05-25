@@ -54,7 +54,7 @@ def evaluate_summaries(expected, actual):
             actual_by_id[item_id] = list(text_fields.values())[0]
         else:
             actual_by_id[item_id] = ''
-    
+    p_id,r_id,f1_id=evaluate_ids(expected_by_id,actual_by_id)
     expected_texts = []
     actual_texts = []
     
@@ -64,20 +64,21 @@ def evaluate_summaries(expected, actual):
             actual_texts.append(actual_by_id[exp_id])
     
     if not expected_texts:
-        return 0.0, 0.0, 0.0
+        return p_id,r_id,f1_id,0.0, 0.0, 0.0
     
     os.environ['TRANSFORMERS_VERBOSITY'] = 'error'
     P, R, F1 = score(actual_texts, expected_texts, lang='en', verbose=False)
-    return P.mean().item(), R.mean().item(), F1.mean().item()
+    return p_id,r_id,f1_id,P.mean().item(), R.mean().item(), F1.mean().item()
 
 def main():
 
     warnings.filterwarnings('ignore')
-    json_path=get_project_root().parent/ 'Results' / 'test_results.json'
+    json_path=get_project_root().parent/ 'Results' / 'test_results_DeepSeek.json'
     with open(json_path, 'r') as f:
         tests = json.load(f)
     
     all_p, all_r, all_f1 = [], [], []
+    all_p_bert, all_r_bert, all_f1_bert = [], [], []
 
     print("Test Evaluation Results:")
     print("-" * 50)
@@ -89,7 +90,11 @@ def main():
         
          # Check if it's a summary test (contains dicts)
         if expected and isinstance(expected[0], dict) and 'summary' in expected[0]:
-            p, r, f1 = evaluate_summaries(expected, actual)
+            p, r, f1, bert_p,bert_r,bert_f1 = evaluate_summaries(expected, actual)
+            all_p_bert.append(bert_p)
+            all_r_bert.append(bert_r)
+            all_f1_bert.append(bert_f1)
+            print(f"{test_id}bert_score summary: P={p:.3f}, R={r:.3f}, F1={f1:.3f}")
         else:
             p, r, f1 = evaluate_ids(expected, actual)
         

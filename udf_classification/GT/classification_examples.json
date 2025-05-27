@@ -5,7 +5,7 @@
     "table_schema": "CREATE TABLE comments (id INTEGER PRIMARY KEY,text TEXT)",
     "question": "Find the ID of comments that don't contain questions.",
     "expected_result": [114338, 70786,196156,194349,185176,201843,192528,194470,171232, 111987,127273,196193],
-    "results_gpt":[114338, 70786, 196156, 194349, 192528, 111987, 127273, 196193],
+    "results_gpt4o":[114338, 70786, 196156, 194349, 192528, 111987, 127273, 196193],
     "results_claude4Sonnet":[114338, 70786, 196156, 194349, 185176, 201843, 192528, 194470, 171232, 111987, 127273, 196193],
     "udf_justification": "Determining whether a comment contains a question requires natural language understanding, as it involves identifying interrogative intent, not just the presence of a question mark."
   },
@@ -15,7 +15,7 @@
     "table_schema": "CREATE TABLE users (id INTEGER PRIMARY KEY,location TEXT)",
     "question": "Find the ID of users living in coastal cities.",
     "expected_result": [12528,11523,46483,24303,45996,43590,25186,13892],
-    "results_gpt":[12528, 11523, 25717, 24303, 13892, 45996, 43590, 25186],
+    "results_gpt4o":[12528, 11523, 25717, 24303, 13892, 45996, 43590, 25186],
     "results_claude4Sonnet":[11523, 46483, 13892, 24303, 43590, 44730, 45996],
     "udf_justification": "Identifying coastal cities from free-text locations requires geographic knowledge and contextual reasoning beyond standard SQL capabilities."
   },
@@ -25,7 +25,7 @@
     "table_schema": "CREATE TABLE superhero (id INTEGER PRIMARY KEY,full_name TEXT)",
     "question": "Find the ID of superheroes whose name is not American.",
     "expected_result":[36,696,363,259,35],
-    "results_gpt":[36, 545, 631, 696, 268, 5, 363, 259],
+    "results_gpt4o":[36, 545, 631, 696, 268, 5, 363, 259],
     "results_claude4Sonnet":[36, 259, 631],
     "udf_justification": "Determining whether a name is 'not American' requires cultural and linguistic inference that goes beyond syntactic matching or keyword filters."
   },
@@ -35,6 +35,7 @@
     "table_schema": "CREATE TABLE patient (id INTEGER PRIMARY KEY,diagnosis TEXT)",
     "question": "Find the ID of patients whose diagnosis is rheumatoid-arthritis.",
     "expected_result":[154143,2371753,4621629],
+    "results_gpt4o":[154143, 2371753, 4621629],
     "results_claude4Sonnet":[154143, 2371753, 4621629],   
     "udf_justification": "Diagnosis is represented as an acronym or shorthand, and resolving it to a specific full-text diagnosis requires contextual medical knowledge and abbreviation expansion."
   },
@@ -42,9 +43,10 @@
     "unique_id": "classification_005",
     "database_id": "card_games-cards.csv",
     "table_schema": "CREATE TABLE cards (id INTEGER PRIMARY KEY,originaltext TEXT)",
-    "question": "Find the ID of cards whose action must be executed opponents.",
-    "expected_result":[18472,4258,9225],
-    "results_claude4Sonnet":[9225,4258,18472],
+    "question": "Find the ID of the cards whose action must be performed by the players affected by the card's power.",
+    "expected_result":[18472,12561,4258,9225],
+    "results_gpt4o":[12561, 19031, 9225, 4258],
+    "results_claude4Sonnet":[12561, 4258, 9225],
     "udf_justification": "Understanding whether a card's action targets opponents involves semantic parsing and comprehension of intent, which goes beyond SQL text search."
   }
 ]

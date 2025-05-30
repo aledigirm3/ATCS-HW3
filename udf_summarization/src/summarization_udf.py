@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import json
 import glob
 from llm import query_groq
 
@@ -49,18 +50,24 @@ folder = '../GT/*.csv'
 
 # All tables
 files = glob.glob(folder)
-with open('../llmResponse.txt', "a", encoding="utf-8") as file:
-    for file in files:
-        filename = os.path.splitext(os.path.basename(file))[0]
-        
-        df = pd.read_csv(file)
-        
-        entity = df['entity_name'][0]
-        descriptions = df['description'].tolist()
+results = []
 
-        summarization = summarize(entity, descriptions)
-        
-        file.write(f"Table: {filename}\n")
-        file.write(f"llmRESPONSE: {'# SUMMARIZATION #'}\n\n")
-        file.flush()
+for filepath in files:
+    filename = os.path.splitext(os.path.basename(filepath))[0]
+    
+    df = pd.read_csv(filepath)
+    
+    entity = df['entity_name'][0]
+    descriptions = df['description'].tolist()
+    
+    summarization = summarize(entity, descriptions)
+    
+    results.append({
+        "table": filename,
+        "entity": entity,
+        "summary": summarization
+    })
+
+with open('../llmResponse.json', 'w', encoding='utf-8') as f:
+    json.dump(results, f, indent=4, ensure_ascii=False)
     

@@ -1,17 +1,17 @@
-,Id,PostTypeId,AcceptedAnswerId,CreaionDate,Score,ViewCount,Body,OwnerUserId,LasActivityDate,Title,Tags,AnswerCount,CommentCount,FavoriteCount,LastEditorUserId,LastEditDate,CommunityOwnedDate,ParentId,ClosedDate,OwnerDisplayName,LastEditorDisplayName
-85244,107797,2,,2014-07-13 16:53:59.0,2,,"<p>It depends on what you are trying to accomplish.  What distribution do you want the imputation to reflect? $$\\mathrm{N}(10, 25)$$ or $$\\mathrm{N}(10,\\frac{25}{\\sqrt{1000}})?$$ </p>
+,Id,OwnerUserId,Body
+0,107797,48148.0,"<p>It depends on what you are trying to accomplish.  What distribution do you want the imputation to reflect? $$\\mathrm{N}(10, 25)$$ or $$\\mathrm{N}(10,\\frac{25}{\\sqrt{1000}})?$$ </p>
 
 <p>Your second task could be accomplished in $0.1\\%$ of the time by implementing my second suggestion.</p>
 
 <p>I want to emphasize that I am <strong>not</strong> endorsing <em>either</em> of these approaches for your intended application (imputing missing values).  My point is that sampling $n$ i.i.d $\\mathrm{N}(\\mu, \\sigma^2)$ and computing $\\bar{X}_n$ is exactly equivalent (and indistinguishable) from drawing a single value from $\\mathrm{N}(\\mu, \\frac{\\sigma^2}{n})$, provided you discard the observations in the first case.</p>
-",48148.0,2014-07-13 22:59:17.0,,,,0,,48148.0,2014-07-13 22:59:17.0,,107795.0,,,
-6598,7153,1,7163.0,2011-02-13 14:05:19.0,1,132.0,"<p>I would like to have a good idea on how to design clinical trials in oncology. In that issue, I am looking for a compact book that could give me a good overview, with the emphasis on statistical considerations.
+"
+1,7153,3019.0,"<p>I would like to have a good idea on how to design clinical trials in oncology. In that issue, I am looking for a compact book that could give me a good overview, with the emphasis on statistical considerations.
 Would you have a recommendation for me?</p>
 
 <p>Thank you in advance,
 Marco</p>
-",3019.0,2011-02-13 23:51:13.0,Book on designing clinical trials in oncology,<books><experiment-design><clinical-trials>,1.0,4,1.0,183.0,2011-02-13 23:51:13.0,,,,,
-66487,82081,2,,2014-01-13 11:12:56.0,1,,"<p>Q1 is known on Wikipedia as the <a href=""http://en.wikipedia.org/wiki/Coupon_collector%27s_problem"" rel=""nofollow"">Coupon collector's problem</a></p>
+"
+2,82081,87.0,"<p>Q1 is known on Wikipedia as the <a href=""http://en.wikipedia.org/wiki/Coupon_collector%27s_problem"" rel=""nofollow"">Coupon collector's problem</a></p>
 
 <p>This is a Geometric distribution with variable rate.  It can be considered as a sequence of independent processes with stepped rate, i.e. with the rate constant changing only after each 'unique' ball is drawn.  </p>
 
@@ -26,8 +26,8 @@ Marco</p>
 <p>I get ~ 224.96</p>
 
 <p>As for Q2, I would suggest Monte Carlo simulation.</p>
-",87.0,2014-01-13 11:23:08.0,,,,1,,87.0,2014-01-13 11:23:08.0,,82072.0,,,
-38354,46315,2,,2012-12-20 16:27:22.0,3,,"<p>A quick way to get at the standardized beta coefficients directly from any lm (or glm) model in R, try using <code>lm.beta(model)</code>. In the example provided, this would be:</p>
+"
+3,46315,17915.0,"<p>A quick way to get at the standardized beta coefficients directly from any lm (or glm) model in R, try using <code>lm.beta(model)</code>. In the example provided, this would be:</p>
 
 <pre><code>library(""MASS"")
 nb = glm.nb(responseCountVar ~ predictor1 + predictor2 + 
@@ -42,8 +42,8 @@ summary(nb)
 library(QuantPsyc)
 lm.beta(nb)
 </code></pre>
-",17915.0,2012-12-20 16:27:22.0,,,,0,,,,,46312.0,,,
-48977,60435,2,,2013-05-30 10:11:57.0,5,,"<p>Although you have given some details, this is too close to ""I have some data, want to fit a regression, and can't interpret my model easily"" to allow much to be said easily that is likely to be really helpful. Too much depends on what your field is, what models make sense or are interesting substantively in that field, etc., not to mention finer details of your data. Not least, what is ""interpretation""? It can mean anything from ""I don't understand the statistics here, so need technical explanation on my level"" to ""What does this imply in subject-matter terms?"". </p>
+"
+4,60435,22047.0,"<p>Although you have given some details, this is too close to ""I have some data, want to fit a regression, and can't interpret my model easily"" to allow much to be said easily that is likely to be really helpful. Too much depends on what your field is, what models make sense or are interesting substantively in that field, etc., not to mention finer details of your data. Not least, what is ""interpretation""? It can mean anything from ""I don't understand the statistics here, so need technical explanation on my level"" to ""What does this imply in subject-matter terms?"". </p>
 
 <p>But (personal opinions mixed in here) </p>
 
@@ -51,8 +51,8 @@ lm.beta(nb)
 <li><p>If your response or dependent variable is a count, I would expect Poisson regression to make much more sense than regression. Even if it is a measured number of years that is zero upwards, I would still expect that. <a href=""http://blog.stata.com/tag/poisson-regression/"" rel=""nofollow"">http://blog.stata.com/tag/poisson-regression/</a> is one account rich in Stata context. </p></li>
 <li><p>The idea of Box-Cox is letting your data indicate which transformations make most sense. However, Box-Cox like much else is a knife that you can cut yourself with. The original examples are instructive: Box and Cox didn't use the precise powers indicated, but logarithm and reciprocal, which made sense on other grounds. Unless you are fitting a power law, it is usually more practical to regard Box-Cox as pointing to one of a small number of standard transformations, most commonly log, root or reciprocal. It is rare that (say) powers such as 0.4 can be related to substantive literature unless there is good theory underpinning the use of fractional powers in the first place. The fact that most common transformations can be regarded as members of a family doesn't mean that all members of that family are equally helpful. </p></li>
 </ul>
-",22047.0,2013-05-30 19:29:34.0,,,,7,,22047.0,2013-05-30 19:29:34.0,,60431.0,,,
-49652,61283,2,,2013-06-09 12:44:05.0,3,,"<p>The p-value for the t-test is computed under the assumption that all observations are independent. Computing probabilities (such as the p-value) is much more difficult when you're dealing with dependent variables, and it is not always easy to see mathematically where things go wrong with the test in the presence of dependence. We can however easily illustrate the problem with a simulation.</p>
+"
+5,61283,8507.0,"<p>The p-value for the t-test is computed under the assumption that all observations are independent. Computing probabilities (such as the p-value) is much more difficult when you're dealing with dependent variables, and it is not always easy to see mathematically where things go wrong with the test in the presence of dependence. We can however easily illustrate the problem with a simulation.</p>
 
 <p>Consider for instance the case where there are 5 classrooms in each of the two schools, with 10 students in each classroom. Under the assumption of normality, the p-value of the test should be uniformly distributed on the interval $(0,1)$ if there is no difference in mean test scores between all the classrooms. That is, if we performed  a lot of studies like this and plotted a histogram of all the p-values, it should resemble <a href=""http://en.wikipedia.org/wiki/Uniform_distribution_%28continuous%29"" rel=""nofollow"">the box-shaped uniform distribution</a>.</p>
 
@@ -96,28 +96,28 @@ for(i in 1:B1)
 hist(p.value,main=paste(""Within-classroom correlation:"",correlation),xlab=""p-value"",cex.main=2,cex.lab=2,cex.axis=2)
 }
 </code></pre>
-",8507.0,2013-06-09 12:55:42.0,,,,2,,8507.0,2013-06-09 12:55:42.0,,61266.0,,,
-24901,27730,1,27744.0,2012-05-04 03:52:09.0,25,4976.0,"<p>I've been using the <em>K-Fold cross validation</em> a few times now to evaluate performance of some learning algorithms, but I've always been puzzled as to how I should choose the value of K.</p>
+"
+6,27730,10683.0,"<p>I've been using the <em>K-Fold cross validation</em> a few times now to evaluate performance of some learning algorithms, but I've always been puzzled as to how I should choose the value of K.</p>
 
 <p>I've often seen and used a value of <code>K = 10</code>, but this seems totally arbitrary to me, and I now just use 10 by habit instead of thinking it over. To me it seems that you're getting a better granularity as you improve the value of K, so ideally you should make your K very large, but there is also a risk to be biased.</p>
 
 <p>I'd like to know on what the value of K should depend, and how I should be thinking about this when I evaluate my algorithm. Does it change something if I use the <em>stratified</em> version of the cross validation or not?</p>
-",10683.0,2012-05-06 02:00:08.0,Choice of K in K-Fold cross validation,<machine-learning><classification><cross-validation>,2.0,0,14.0,,,,,,,
-60518,74176,2,,2013-10-30 20:52:06.0,3,,"<p>It is certainly possible and does happen quite frequently, especially if there are many pairwise comparisons (which is likely the case if you're investigating an interaction term).  </p>
+"
+7,74176,2310.0,"<p>It is certainly possible and does happen quite frequently, especially if there are many pairwise comparisons (which is likely the case if you're investigating an interaction term).  </p>
 
 <p>The Tukey procedure controls the Type I error rate and requires a larger difference to declare significance compared to if no adjustment was used.  The ANOVA F-test uses MSE in the denominator which borrows information from all the data and is not affected by this adjustment.</p>
-",2310.0,2013-10-30 20:52:06.0,,,,0,,,,,74174.0,,,
-4940,5346,1,,2010-12-10 10:54:27.0,7,1416.0,"<p>I understand that in One-Way ANOVA two alternative F-Ratios have been derived to be robust when homogeneity of variance has been violated. Tomarkin and Serlin (1986) review amongst other techniques the Brown-Forsythe and Welch F-Ratios and conclude that both control the type I error rate well.</p>
+"
+8,5346,,"<p>I understand that in One-Way ANOVA two alternative F-Ratios have been derived to be robust when homogeneity of variance has been violated. Tomarkin and Serlin (1986) review amongst other techniques the Brown-Forsythe and Welch F-Ratios and conclude that both control the type I error rate well.</p>
 
 <p>So far I have only come across W and B-Fs F Ratios in One-Way ANOVAS. Am I able to use them in ANOVAS with two factors? And if no, why not?</p>
 
 <p>Thanks</p>
-",,2013-02-23 21:31:46.0,Brown-Forsythe and Welch f-ratios in two-way ANOVAs?,<anova><homogeneity>,2.0,0,2.0,88.0,2010-12-10 11:03:12.0,,,,Alex,
-34491,40766,1,,2012-10-19 17:13:31.0,1,108.0,"<p>Is it possible to fit an ARIMA under a restriction that bounds the minimum to positive values? I'm using Minitab. </p>
-",16028.0,2012-10-19 17:13:31.0,ARIMA Forecast Restrictions,<forecasting><arima><minitab>,0.0,1,,,,,,,,
-21907,24225,2,,2012-03-07 00:53:27.0,4,,"<p>Instead of these tests, you might want to check out the <a href=""http://stats.stackexchange.com/questions/19590/why-does-the-breusch-pagan-test-fail/19598#19598"">Breusch-Pagan</a> test and <a href=""http://stats.stackexchange.com/questions/8107/how-do-i-interpret-the-results-of-a-breuschpagan-test/8162#8162"">White's</a> version of the same. Neither requires a normality assumption and White has shown that his version is quite robust to misspecification.</p>
-",401.0,2012-03-07 00:53:27.0,,,,1,,,,,2591.0,,,
-11362,12386,1,12431.0,2011-06-27 03:33:31.0,32,4103.0,"<p>I find resources like the <a href=""http://matthias.vallentin.net/probability-and-statistics-cookbook/"">Probability and Statistics Cookbook</a> and <a href=""http://www.google.com/url?sa=t&amp;source=web&amp;cd=2&amp;ved=0CC4QFjAB&amp;url=http://cran.r-project.org/doc/contrib/YanchangZhao-refcard-data-mining.pdf&amp;rct=j&amp;q=%22r%20reference%20card%20for%20data%20mining%22&amp;ei=XfcHTtzxI8jKiAKxksSxDQ&amp;usg=AFQjCNEHAMYdpy7bna4XA29FtmWOQqboUw&amp;sig2=cMZww4Cm9E50tJoewbi3Rg&amp;cad=rja"">The R Reference Card for Data Mining</a> incredibly useful. They obviously serve well as references but also help me to organize my thoughts on a subject and get the lay of the land. </p>
+"
+9,40766,16028.0,"<p>Is it possible to fit an ARIMA under a restriction that bounds the minimum to positive values? I'm using Minitab. </p>
+"
+10,24225,401.0,"<p>Instead of these tests, you might want to check out the <a href=""http://stats.stackexchange.com/questions/19590/why-does-the-breusch-pagan-test-fail/19598#19598"">Breusch-Pagan</a> test and <a href=""http://stats.stackexchange.com/questions/8107/how-do-i-interpret-the-results-of-a-breuschpagan-test/8162#8162"">White's</a> version of the same. Neither requires a normality assumption and White has shown that his version is quite robust to misspecification.</p>
+"
+11,12386,3577.0,"<p>I find resources like the <a href=""http://matthias.vallentin.net/probability-and-statistics-cookbook/"">Probability and Statistics Cookbook</a> and <a href=""http://www.google.com/url?sa=t&amp;source=web&amp;cd=2&amp;ved=0CC4QFjAB&amp;url=http://cran.r-project.org/doc/contrib/YanchangZhao-refcard-data-mining.pdf&amp;rct=j&amp;q=%22r%20reference%20card%20for%20data%20mining%22&amp;ei=XfcHTtzxI8jKiAKxksSxDQ&amp;usg=AFQjCNEHAMYdpy7bna4XA29FtmWOQqboUw&amp;sig2=cMZww4Cm9E50tJoewbi3Rg&amp;cad=rja"">The R Reference Card for Data Mining</a> incredibly useful. They obviously serve well as references but also help me to organize my thoughts on a subject and get the lay of the land. </p>
 
 <p>Q: Does anything like these resources exist for machine learning methods?</p>
 
@@ -134,8 +134,8 @@ hist(p.value,main=paste(""Within-classroom correlation:"",correlation),xlab=""p-
 </ul>
 
 <p>All these things can be found with some minimal digging through textbooks I'm sure. It would just be really convenient to have them on a few pages. </p>
-",3577.0,2014-05-29 15:59:19.0,Machine learning cookbook / reference card / cheatsheet?,<machine-learning><books>,12.0,10,45.0,88.0,2011-06-27 07:28:41.0,,,,,
-54048,66520,5,,2013-08-04 18:42:38.0,0,,"<p>In probability and statistics, an exponential family is an important class of probability distributions sharing a certain form, specified below. This special form is chosen for mathematical convenience, on account of some useful algebraic properties, as well as for generality, as exponential families are in a sense very natural distributions to consider. The term exponential class is sometimes used in place of ""exponential family"".</p>
+"
+12,66520,22468.0,"<p>In probability and statistics, an exponential family is an important class of probability distributions sharing a certain form, specified below. This special form is chosen for mathematical convenience, on account of some useful algebraic properties, as well as for generality, as exponential families are in a sense very natural distributions to consider. The term exponential class is sometimes used in place of ""exponential family"".</p>
 
 <p>From Mood et al. (pages 312 and 313, 1974):</p>
 
@@ -164,8 +164,8 @@ hist(p.value,main=paste(""Within-classroom correlation:"",correlation),xlab=""p-
 <p><a href=""http://rads.stackoverflow.com/amzn/click/0070854653"" rel=""nofollow"">Mood, A. M., Graybill, F. A., &amp; Boes, D. C. (1974). Introduction to theory of statistics. (B. C. Harrinson &amp; M. Eichberg, Eds.) (3rd ed., p. 564). McGraw-Hill, Inc.</a></p>
 
 <p><a href=""https://en.wikipedia.org/wiki/Exponential_family"" rel=""nofollow"">Wkipedia</a></p>
-",22468.0,2013-08-04 21:12:36.0,,,,0,,22468.0,2013-08-04 21:12:36.0,,,,,
-7333,7953,2,,2011-03-07 11:59:48.0,17,,"<p>Although I didn't try this explicitly from with R (I usually post-process the Tables in Latex directly with <code>\\rowcolor</code>, <code>\\rowcolors</code>, or the <a href=""http://ctan.org/pkg/colortbl"">colortbl</a> package), I think it would be easy to do this by playing with the <code>add.to.row</code> arguments in <code>print.xtable()</code>. It basically expect two components (passed as <code>list</code>): (1) row number, and (2) $\\LaTeX$ command. Please note that command are added at the end of the specified row(s).</p>
+"
+13,7953,930.0,"<p>Although I didn't try this explicitly from with R (I usually post-process the Tables in Latex directly with <code>\\rowcolor</code>, <code>\\rowcolors</code>, or the <a href=""http://ctan.org/pkg/colortbl"">colortbl</a> package), I think it would be easy to do this by playing with the <code>add.to.row</code> arguments in <code>print.xtable()</code>. It basically expect two components (passed as <code>list</code>): (1) row number, and (2) $\\LaTeX$ command. Please note that command are added at the end of the specified row(s).</p>
 
 <p>It seems to work, with the <code>colortbl</code> package. So, something like this</p>
 
@@ -197,8 +197,8 @@ w2 &lt;- latex(m, rownamesTexCmd=c("""",""rowcolor[gray]{.8}""),
             numeric.dollar=FALSE, file='/tmp/out2.tex')
 w2
 </code></pre>
-",930.0,2011-03-08 10:30:23.0,,,,2,,930.0,2011-03-08 10:30:23.0,,7952.0,,,
-10618,11566,2,,2011-06-04 15:07:10.0,2,,"<p>The simplest non-trivial example I can construct uses an iid 2-vector of Bernoulli variables and the projection matrix {{1,1},{0,0}}.  That is,  $\\mathbf{P}(\\mathbf{x_1},\\mathbf{x_2})&#39; = \\mathbf{x_1+x_2}$.  The projected random variable can take on the values 0, 1, and 2 with positive probability (it has a binomial distribution).  Even when you rescale this to be an orthogonal projection, there will still be three distinct values with positive probability.  Therefore, because the original Bernoulli variables can only have two distinct values, you cannot generally expect the projected components to have the same distribution as the original variables.</p>
+"
+14,11566,919.0,"<p>The simplest non-trivial example I can construct uses an iid 2-vector of Bernoulli variables and the projection matrix {{1,1},{0,0}}.  That is,  $\\mathbf{P}(\\mathbf{x_1},\\mathbf{x_2})&#39; = \\mathbf{x_1+x_2}$.  The projected random variable can take on the values 0, 1, and 2 with positive probability (it has a binomial distribution).  Even when you rescale this to be an orthogonal projection, there will still be three distinct values with positive probability.  Therefore, because the original Bernoulli variables can only have two distinct values, you cannot generally expect the projected components to have the same distribution as the original variables.</p>
 
 <p>It may be worth making a few additional remarks:</p>
 
@@ -206,8 +206,8 @@ w2
 <li><p>In most cases, any proper projection (i.e., not the identity) <em>does</em> change the covariance matrix.  This is obvious, because the resulting covariance matrix must have a nonzero kernel, implying it is not positive definite.</p></li>
 <li><p>When the original distribution is normal, the components of $\\mathbf{X}_P$ will be normal or degenerate (that is, constant).  If the projection is proper, the components cannot possibly be iid, because the covariance is degenerate.</p></li>
 </ol>
-",919.0,2011-06-04 15:07:10.0,,,,0,,,,,11557.0,,,
-64078,79312,1,,2013-12-11 09:56:38.0,0,130.0,"<p>Why does the ACF of an AR(1) contains sometimes a sinusoid-like pattern? and what does it mean? </p>
+"
+15,79312,30701.0,"<p>Why does the ACF of an AR(1) contains sometimes a sinusoid-like pattern? and what does it mean? </p>
 
 <p><img src=""http://i.stack.imgur.com/PszbQ.png"" alt=""enter image description here""></p>
 
@@ -219,14 +219,14 @@ As I understand it, in an AR model, the value of x at time t is a linear functio
 <p><img src=""http://i.stack.imgur.com/aBLQl.png"" alt=""enter image description here""></p>
 
 <p>If wt is random, then we see a random Figure in correlogram. If not, we can see a pattern in correlogram, is it correct? If yes why do we see here a sinusoid pattern? In this  case has the wt (Residual) a constant value?</p>
-",30701.0,2013-12-11 10:22:29.0,why sinusoid pattern in correlogram,<time-series><correlation><autocorrelation>,0.0,7,0.0,22047.0,2013-12-11 10:22:29.0,,,,,
-65558,81017,1,,2014-01-02 03:14:33.0,0,38.0,"<p>Is there a simple formula to find the MAPE for $Y_t$ if we know the MAPE for $\\Delta$log($Y_t)$ ~ iid N($\\mu$,$\\sigma^2$)?</p>
+"
+16,81017,30192.0,"<p>Is there a simple formula to find the MAPE for $Y_t$ if we know the MAPE for $\\Delta$log($Y_t)$ ~ iid N($\\mu$,$\\sigma^2$)?</p>
 
 <p>Is there an algebraic relation between the two?</p>
 
 <p>What if I use RMSFE instead? Or some other measure of forecast accuracy.</p>
-",30192.0,2014-01-06 00:41:36.0,Is there a formula to find the MAPE for $Y_t$ if we know the MAPE for $\\Delta$log($Y_t)$?,<time-series><forecasting><econometrics>,0.0,8,1.0,30192.0,2014-01-06 00:41:36.0,,,,,
-77919,96354,2,,2014-05-04 16:31:20.0,1,,"<p>$\\newcommand{\\E}{\\mathrm{E}}$
+"
+17,96354,44063.0,"<p>$\\newcommand{\\E}{\\mathrm{E}}$
 $\\newcommand{\\Var}{\\mathrm{Var}}$
 $\\newcommand{\\Cov}{\\mathrm{Cov}}$
  Consider a portfolio, $P_{i} = w_{i1}*X_{i} + w_{i2}*Y_{i}$. For a given expected return, $\\E[P_i] = \\E[X_i] + \\E[Y_i]$, we want to construct the portfolio in a manner which minimizes the overall volatility (risk), which is typically measured in terms of standard deviation. Equivalently, we can use the variance as a measurement of risk, since it is just volatility squared. Then, the overall variance of our portfolio is:
@@ -234,12 +234,12 @@ $$
 \\Var[P_i] = w_{i1}^{2}*\\Var[X_i] + w_{i2}^{2}*\\Var[Y_i] + 2*\\Cov[X_{i},Y_{i}]*w_{i1}*w_{i2}
 $$
 So, for a given expected return, we choose a combination of assets $X_{i}$ and $Y_{i}$ which minimizes $\\Var[P_{i}]$, i.e. $\\Cov[X_{i},Y_{i}] &lt; 0$.  </p>
-",44063.0,2014-05-04 16:31:20.0,,,,0,,,,,96277.0,,,
-38206,46149,2,,2012-12-18 05:12:28.0,1,,"<p>KL-Divergence(or Information Gain) can be one solution, which gives quantitative estimation of how corelated the target and feature are. I also use log oddratio to see how the oddratio changes as the feature  value changes, which leads to feature preprocessing techniques that can be applied the the feature.</p>
-",17408.0,2012-12-18 05:12:28.0,,,,0,,,,,46106.0,,,
-8743,9521,2,,2011-04-13 15:19:35.0,5,,"<p>You should use the median, not the mean. However, you'll need to use methods appropriate for <a href=""http://en.wikipedia.org/wiki/Survival_analysis"" rel=""nofollow"">time-to-event (survival)</a> data that deal appropriately with <a href=""http://en.wikipedia.org/wiki/Censoring_%28statistics%29"" rel=""nofollow"">censoring</a>: if the account was handled to another employee without being resolved you know only that the time <em>this</em> employee <em>would</em> have taken to resolve it is greater than or equal to the observed time for which they handled the account, so the observed time is right-censored.</p>
+"
+18,46149,17408.0,"<p>KL-Divergence(or Information Gain) can be one solution, which gives quantitative estimation of how corelated the target and feature are. I also use log oddratio to see how the oddratio changes as the feature  value changes, which leads to feature preprocessing techniques that can be applied the the feature.</p>
+"
+19,9521,449.0,"<p>You should use the median, not the mean. However, you'll need to use methods appropriate for <a href=""http://en.wikipedia.org/wiki/Survival_analysis"" rel=""nofollow"">time-to-event (survival)</a> data that deal appropriately with <a href=""http://en.wikipedia.org/wiki/Censoring_%28statistics%29"" rel=""nofollow"">censoring</a>: if the account was handled to another employee without being resolved you know only that the time <em>this</em> employee <em>would</em> have taken to resolve it is greater than or equal to the observed time for which they handled the account, so the observed time is right-censored.</p>
 
 <p>The appropriate method would be to construct the <a href=""http://en.wikipedia.org/wiki/Kaplan-Meier_estimator"" rel=""nofollow"">Kaplan–Meier estimator</a> of the survival function. If you want a single number for each employee, you could use this method to obtain the median 'survival' time, which gives you the median time taken to resolve an account. You can also get confidence intervals for the median if you so wish. It's possible that the median may not be estimable for some employees though if they fail to resolve more than half the accounts before they are re-assigned, in which case you could consider switching to some other percentile that is estimable for all (or at least the great majority of) employees.</p>
 
 <p>The Kaplan-Meier estimator isn't difficult -- it's perfectly possible, if somewhat tedious, to construct by hand, and straightforward to program. Confidence intervals are a bit more tricky, but are available in any decent statistical software package.</p>
-",449.0,2011-04-13 15:19:35.0,,,,3,,,,,9517.0,,,
+"

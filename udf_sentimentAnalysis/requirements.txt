@@ -1,0 +1,4 @@
+scikit-learn
+bert-score
+python-dotenv
+groq

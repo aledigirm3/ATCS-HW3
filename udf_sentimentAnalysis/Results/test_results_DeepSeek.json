@@ -1,0 +1,108 @@
+[
+    {
+        "test_id": "sentiment_analysis_001",
+        "question": "Which cards id have flavor text with negative sentiment?",
+        "expected": [
+            20827
+        ],
+        "actual": "[11, 15]"
+    },
+    {
+        "test_id": "sentiment_analysis_002",
+        "question": "Find users id with AboutMe descriptions having a highly negative sentiment",
+        "expected": [
+            2609,
+            2269
+        ],
+        "actual": "[2609, 2269]"
+    },
+    {
+        "test_id": "sentiment_analysis_003",
+        "question": "Find user by id with AboutMe descriptions with neutral sentiment",
+        "expected": [
+            41203,
+            52599
+        ],
+        "actual": "[41203, 52599, 2609, 7547, 2269, 31765]"
+    },
+    {
+        "test_id": "sentiment_analysis_004",
+        "question": "Find rulings with sentiment outside the neutral range ",
+        "expected": [
+            38019,
+            37243,
+            61996,
+            84807
+        ],
+        "actual": "[38019, 84802]"
+    },
+    {
+        "test_id": "sentiment_analysis_005",
+        "question": "Which reviews have a negative sentiment score?",
+        "expected": [
+            42339,
+            40875,
+            57996,
+            58675,
+            8188,
+            48423
+        ],
+        "actual": "[13501, 41871, 42339, 40875, 58675, 17415, 40747, 8188, 48423, 57996]"
+    },
+    {
+        "test_id": "sentiment_analysis_006",
+        "question": "Find reviews expressing highly positive sentiment",
+        "expected": [
+            28514,
+            169,
+            60351,
+            43565,
+            19145
+        ],
+        "actual": "[60351, 169, 43565, 26404, 19145]"
+    },
+    {
+        "test_id": "sentiment_analysis_007",
+        "question": "Identify reviews with neutral sentiment",
+        "expected": [
+            13501,
+            33619,
+            41871,
+            979,
+            17415
+        ],
+        "actual": "[41871, 9723, 33619, 979]"
+    },
+    {
+        "test_id": "sentiment_analysis_008",
+        "question": "Which is the id of the most negative review?",
+        "expected": [
+            48423
+        ],
+        "actual": "8188"
+    },
+    {
+        "test_id": "sentiment_analysis_classify_001",
+        "question": "Which reviews are critical of a gaming app?",
+        "expected": [
+            41871,
+            48423
+        ],
+        "actual": "[41871, 9723, 48423]"
+    },
+    {
+        "test_id": "analyze_sentiment_summarize_001",
+        "question": "Which cards with highly positive flavor text sentiment also have complex rulings? Give me a list dictionaries with the card id and a summary of the rulings.",
+        "expected": [
+            {
+                "id": 22025,
+                "summary": "Damage stays until cleanup. If Sunmare leaves after lethal Horse damage, it dies. Needs life gain before end step, not during."
+            },
+            {
+                "id": 37149,
+                "summary": "You control Auras cast on opponent's permanents. They count for Helm of the Gods' bonus."
+            }
+        ],
+        "actual": "[\n  {\n    \"id\": 22025,\n    \"summary\": \"Crested Sunmare's triggered ability creates a 5/5 Horse token when life is gained, with specific conditions on when it triggers.\"\n  },\n  {\n    \"id\": 37149,\n    \"summary\": \"Helm of the Gods grants +1/+1 for each enchantment controlled, with equip ability and interaction with Aura spells.\"\n  }\n]"
+    }
+]

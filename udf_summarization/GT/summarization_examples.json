@@ -1,0 +1,51 @@
+[
+  {
+    "unique_id": "summarization_001",
+    "database_id": "synthetic_db",
+    "table_schema": "CREATE TABLE dish_reviews (entity_id INTEGER, entity_name TEXT, user_id TEXT, description TEXT, PRIMARY KEY (entity_id, user_id))",
+    "question": "Please summarize the following personal reviews",
+    "expected_result": "The Spicy Truffle Pasta receives mixed but generally intrigued feedback. Many reviewers appreciated the bold combination of spice and truffle, with compliments for the pasta's texture, rich flavor, and presentation. The dish is praised for its umami depth, balanced creaminess, and quality ingredients. However, several found the spiciness overpowering, masking the delicate truffle notes. Criticisms include an oily sauce, synthetic truffle aroma, and occasional overcooked pasta. Some noted the flavor profile felt too niche or unbalanced, and a few mentioned that the portion size was small for the price. Overall, it's considered a daring and flavorful dish best suited for adventurous palates, though the intensity of spice may not appeal to everyone.",
+    "udf_justification": "Standard SQL cannot summarize text. You need to have a summary of the dish without having to read all the reviews"
+  },
+  {
+    "unique_id": "summarization_002",
+    "database_id": "synthetic_db",
+    "table_schema": "CREATE TABLE game_reviews (entity_id INTEGER, entity_name TEXT, user_id TEXT, description TEXT, PRIMARY KEY (entity_id, user_id))",
+    "question": "Please summarize the following personal descriptions",
+    "expected_result": "CyberQuest: Dark Horizon received largely negative feedback from players. While a few appreciated the game's world-building and soundtrack, the majority expressed disappointment. Common complaints include persistent bugs, frequent crashes, outdated graphics, and a clunky combat system. The user interface is widely seen as confusing, and many criticize the abundance of microtransactions in what is supposed to be a full-priced game. Technical issues such as long load times, server disconnects, and poor optimization are frequently mentioned. Gameplay elements like the quest design, story progression, and skill tree were found to be shallow or overly complex. Although some missions and the music received mild praise, the general sentiment is that the game feels rushed, unfinished, and frustrating to play. Overall, the game fails to deliver on its potential and leaves most players dissatisfied.",
+    "udf_justification": "Standard SQL cannot summarize text. You need to have a summary of the game without having to read all the reviews"
+  },
+  {
+    "unique_id": "summarization_003",
+    "database_id": "synthetic_db",
+    "table_schema": "CREATE TABLE gym_reviews (entity_id INTEGER, entity_name TEXT, user_id TEXT, description TEXT, PRIMARY KEY (entity_id, user_id))",
+    "question": "Please summarize the following personal descriptions",
+    "expected_result": "Iron Pulse Gym is appreciated for its diverse range of equipment, clean facilities, and supportive atmosphere. Many members praise the friendly and knowledgeable trainers, engaging group classes (especially yoga and spinning), and affordable membership options. The gym is described as spacious and welcoming, making it ideal for strength training. However, users also highlight some drawbacks: the gym can become overcrowded during peak hours, some machines need maintenance, and the showers (especially on weekends) lack hot water. Other recurring criticisms include parking difficulties, inconsistent air conditioning, and excessively loud music. Overall, Iron Pulse Gym is seen as a solid fitness facility with great potential, particularly for weight training and group fitness enthusiasts, though it could benefit from better maintenance and facility upgrades.",
+    "udf_justification": "Standard SQL cannot summarize text. You need to have a summary of the gym reviews without having to read all the reviews"
+  },
+  {
+    "unique_id": "summarization_004",
+    "database_id": "synthetic_db",
+    "table_schema": "CREATE TABLE movie_comments (entity_id INTEGER, entity_name TEXT, user_id TEXT, description TEXT, PRIMARY KEY (entity_id, user_id))",
+    "question": "Please summarize the following personal descriptions",
+    "expected_result": "The Invisible Journey receives praise for its stunning cinematography, emotional music, and powerful lead performances. Many find the film visually poetic and thematically rich, particularly in exploring isolation and hope. However, criticism centers on its slow pacing, predictable or confusing plot, and uneven character development. The editing and dialogue are seen as weak by some viewers. Despite mixed views on the narrative, it is generally considered a visually captivating experience with philosophical undertones.",
+      
+    "udf_justification": "Standard SQL cannot summarize text. You need to have a summary of the movie comments without having to read all the reviews"
+  },
+  {
+    "unique_id": "summarization_005",
+    "database_id": "synthetic_db",
+    "table_schema": "CREATE TABLE person_testimonials (entity_id INTEGER, entity_name TEXT, user_id TEXT, description TEXT, PRIMARY KEY (entity_id, user_id))",
+    "question": "Please summarize the following personal testimonials about a person",
+    "expected_result": "Professor Lucia Bianchi is widely recognized for her deep knowledge in literature, structured lectures, and ability to stimulate critical thinking. Many students describe her as passionate, intellectually demanding, and impactful in nurturing academic growth. However, she is also criticized for being overly strict in grading, less approachable outside class, and slow in communication. Opinions are divided between those who admire her high standards and those who struggle with her rigid style. Overall, she is a rigorous educator who leaves a strong impression, for better or worse.",
+    "udf_justification": "Standard SQL cannot summarize text. You need to have a summary of the person testimonials without having to read all the reviews"
+  },
+  {
+    "unique_id": "summarization_006",
+    "database_id": "synthetic_db",
+    "table_schema": "CREATE TABLE product_reviews (entity_id INTEGER, entity_name TEXT, user_id TEXT, description TEXT, PRIMARY KEY (entity_id, user_id))",
+    "question": "Please summarize the following personal reviews",
+    "expected_result": "The Smartphone XYZ-1000 is generally well-regarded for its vibrant OLED display, sleek design, fast performance, and strong battery life. Users appreciate the fast charging, expandable storage, and smooth interface. However, several reviews point out flaws such as poor camera performance in low light, overheating during calls, unreliable fingerprint sensor, and a cluttered UI. The lack of a headphone jack and excess pre-installed software are noted negatives. Overall, it is considered a good value device with premium features, but not without trade-offs.",
+    "udf_justification": "Standard SQL cannot summarize text. You need to have a summary of the product reviews without having to read all the reviews"
+  }
+]

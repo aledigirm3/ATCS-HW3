@@ -1,13 +1,13 @@
 [
-    {
+  {
     "unique_id": "ner_udf_01",
     "database_id": "student_club",
-    "table_schema": "CREATE TABLE member (\n  member_id INTEGER PRIMARY KEY,\n  first_name TEXT,\n  last_name TEXT,\n  join_date DATE,\n  bio TEXT,\n  email TEXT\n)",
-    "question": "Per il membro con member_id = 21, estrai tutte le entità di tipo PER (persona), LOC (luogo) e ORG (organizzazione) nel campo bio.",
+    "table_schema": "CREATE TABLE member (  member_id INTEGER PRIMARY KEY,  first_name TEXT,  last_name TEXT,  join_date DATE,  bio TEXT,  email TEXT)",
+    "question": "For the member with member_id = 21, extract all entities of type PER (person), LOC (location), and ORG (organization) in the bio field.",
     "hypothetical_relevant_data": [
       {
         "member_id": 21,
-        "bio": "Alice Rossi si è unita da Italia dopo un periodo di scambio all’University of Cambridge."
+        "bio": "Alice Rossi joined from Italy after an exchange period at the University of Cambridge."
       }
     ],
     "expected_result": {
@@ -15,23 +15,23 @@
         "Alice Rossi"
       ],
       "LOC": [
-        "Italia"
+        "Italy"
       ],
       "ORG": [
         "University of Cambridge"
       ]
     },
-    "udf_justification": "Il campo bio mescola nomi propri, paesi e istituzioni in testo libero; solo un UDF LLM-NER può riconoscere e classificare PER, LOC e ORG in modo affidabile."
+    "udf_justification": "The bio field mixes proper names, countries, and institutions in free text; only an LLM-NER UDF can reliably recognize and classify PER, LOC, and ORG."
   },
   {
     "unique_id": "ner_udf_02",
     "database_id": "student_club",
-    "table_schema": "CREATE TABLE project (\n  project_id INTEGER PRIMARY KEY,\n  project_name TEXT,\n  description TEXT,\n  start_date DATE,\n  end_date DATE,\n  lead_member_id INTEGER\n)",
-    "question": "Per il progetto con project_id = 12, estrai tutte le entità di tipo ORG (organizzazione) menzionate nella description.",
+    "table_schema": "CREATE TABLE project (  project_id INTEGER PRIMARY KEY,  project_name TEXT,  description TEXT,  start_date DATE,  end_date DATE,  lead_member_id INTEGER)",
+    "question": "For the project with project_id = 12, extract all ORG (organization) entities mentioned in the description.",
     "hypothetical_relevant_data": [
       {
         "project_id": 12,
-        "description": "Il progetto collabora con UNICEF e utilizza infrastrutture cloud AWS e Azure per il deployment."
+        "description": "The project collaborates with UNICEF and uses AWS and Azure cloud infrastructure for deployment."
       }
     ],
     "expected_result": [
@@ -39,34 +39,34 @@
       "AWS",
       "Azure"
     ],
-    "udf_justification": "La description contiene nomi di organizzazioni e servizi cloud in testo non strutturato; un UDF LLM-NER è necessario per individuare e classificare correttamente queste entità ORG."
+    "udf_justification": "The description contains organization names and cloud services in unstructured text; an LLM-NER UDF is required to correctly identify and classify these ORG entities."
   },
   {
     "unique_id": "ner_udf_03",
     "database_id": "codebase_community",
-    "table_schema": "CREATE TABLE comments (\n  Id INTEGER PRIMARY KEY,\n  PostId INTEGER,\n  Score INTEGER,\n  Text TEXT,\n  CreationDate DATETIME,\n  UserId INTEGER\n)",
-    "question": "Per il commento con Id = 515, estrai tutte le entità di tipo LOC (luogo) menzionate nel Text.",
+    "table_schema": "CREATE TABLE comments (  Id INTEGER PRIMARY KEY,  PostId INTEGER,  Score INTEGER,  Text TEXT,  CreationDate DATETIME,  UserId INTEGER)",
+    "question": "For the comment with Id = 515, extract all LOC (location) entities mentioned in the Text.",
     "hypothetical_relevant_data": [
       {
         "Id": 515,
-        "Text": "Venite a trovarci nel nostro ufficio di Berlino o passate presso la sede di Parigi."
+        "Text": "Come visit us at our Berlin office or drop by the Paris branch."
       }
     ],
     "expected_result": [
-      "Berlino",
-      "Parigi"
+      "Berlin",
+      "Paris"
     ],
-    "udf_justification": "Il campo Text è testo libero con riferimenti a città; un UDF LLM-NER è necessario per riconoscere e normalizzare le entità LOC."
+    "udf_justification": "The Text field is free text with references to cities; an LLM-NER UDF is required to recognize and normalize the LOC entities."
   },
   {
     "unique_id": "ner_udf_004",
     "database_id": "codebase_community",
     "table_schema": "CREATE TABLE posts (  Id INTEGER PRIMARY KEY,  PostTypeId INTEGER,  CreationDate DATETIME,  Score INTEGER,  ViewCount INTEGER,  Body TEXT,  OwnerUserId INTEGER,  Title TEXT,  Tags TEXT)",
-    "question": "Per il post con Id = 128, estrai tutti i nomi di linguaggi di programmazione menzionati nel Body.",
+    "question": "For the post with Id = 128, extract all programming language names mentioned in the Body.",
     "hypothetical_relevant_data": [
       {
         "Id": 128,
-        "Body": "Nell’introduzione al progetto ho usato Python per il preprocessing, mentre per il backend ho scritto API in Go e un servizio di frontend in TypeScript."
+        "Body": "In the project introduction I used Python for preprocessing, while for the backend I wrote APIs in Go and a frontend service in TypeScript."
       }
     ],
     "expected_result": [
@@ -74,130 +74,130 @@
       "Go",
       "TypeScript"
     ],
-    "udf_justification": "Il campo Body è testo libero: SQL non può riconoscere automaticamente e classificare i nomi di linguaggi di programmazione all’interno del testo; serve un UDF NER basato su LLM per estrarre queste entità."
+    "udf_justification": "The Body field is free text: SQL cannot automatically recognize and classify programming language names within the text; an LLM-based NER UDF is required to extract these entities."
   },
   {
     "unique_id": "ner_udf_005",
     "database_id": "codebase_community",
     "table_schema": "CREATE TABLE comments (  Id INTEGER PRIMARY KEY,  PostId INTEGER,  Score INTEGER,  Text TEXT,  CreationDate DATETIME,  UserId INTEGER)",
-    "question": "Nel commento con Id = 314, estrai tutti i nomi di persona menzionati nel Text.",
+    "question": "In the comment with Id = 314, extract all person names mentioned in the Text.",
     "hypothetical_relevant_data": [
       {
         "Id": 314,
-        "Text": "Un ringraziamento speciale a Maria Rossi e Luca Bianchi per il feedback dettagliato!"
+        "Text": "Special thanks to Maria Rossi and Luca Bianchi for the detailed feedback!"
       }
     ],
     "expected_result": [
       "Maria Rossi",
       "Luca Bianchi"
     ],
-    "udf_justification": "Il campo Text contiene nomi propri di persona in formato libero; solo un modello LLM-NER può segmentare correttamente i token e riconoscere le entità PERSON."
+    "udf_justification": "The Text field contains personal proper names in free form; only an LLM-NER model can correctly segment the tokens and recognize the PERSON entities."
   },
   {
     "unique_id": "ner_udf_006",
     "database_id": "student_club",
     "table_schema": "CREATE TABLE event (  event_id TEXT PRIMARY KEY,  event_name TEXT,  event_date DATE,  type TEXT,  notes TEXT,  location TEXT,  status TEXT)",
-    "question": "Per l'evento con event_id = 'E100', quali entità di tipo LOC (luogo) e ORG (organizzazione) compaiono nelle notes?",
+    "question": "For the event with event_id = 'E100', which LOC (location) and ORG (organization) entities appear in the notes?",
     "hypothetical_relevant_data": [
       {
         "event_id": "E100",
-        "notes": "Il punto di ritrovo sarà al Parco Centrale di Milano, organizzato dal Club Escursionisti Milano e patrocinato da Comune di Milano."
+        "notes": "The meeting point will be at Central Park of Milan, organized by the Milan Hiking Club and sponsored by the Municipality of Milan."
       }
     ],
     "expected_result": {
       "LOC": [
-        "Parco Centrale di Milano"
+        "Central Park of Milan"
       ],
       "ORG": [
-        "Club Escursionisti Milano",
-        "Comune di Milano"
+        "Milan Hiking Club",
+        "Municipality of Milan"
       ]
     },
-    "udf_justification": "Le notes includono mix di luoghi e organizzazioni in testo libero; un UDF LLM-NER è necessario per segmentare le frasi e classificare le entità LOC vs ORG."
+    "udf_justification": "The notes include a mix of places and organizations in free text; an LLM-NER UDF is required to segment the sentences and classify LOC vs ORG entities."
   },
   {
     "unique_id": "ner_udf_007",
     "database_id": "student_club",
     "table_schema": "CREATE TABLE expense (  expense_id INTEGER PRIMARY KEY,  expense_description TEXT,  expense_date DATE,  approved BOOLEAN,  link_to_member INTEGER,  link_to_budget INTEGER)",
-    "question": "Per la spesa con expense_id = 502, estrai tutti i nomi di organizzazioni (ORG) e luoghi (LOC) menzionati in expense_description.",
+    "question": "For the expense with expense_id = 502, extract all organization (ORG) and location (LOC) names mentioned in expense_description.",
     "hypothetical_relevant_data": [
       {
         "expense_id": 502,
-        "expense_description": "Pagamento fattura per il catering di Eventi Gourmet Srl al Castello di Rivoli, più noleggio attrezzature da Allestimenti Roma."
+        "expense_description": "Invoice payment for catering by Eventi Gourmet Ltd at the Castle of Rivoli, plus equipment rental from Allestimenti Roma."
       }
     ],
     "expected_result": {
       "ORG": [
-        "Eventi Gourmet Srl",
+        "Eventi Gourmet Ltd",
         "Allestimenti Roma"
       ],
       "LOC": [
-        "Castello di Rivoli"
+        "Castle of Rivoli"
       ]
     },
-    "udf_justification": "Il campo expense_description è testo libero che mescola nomi di aziende e luoghi in forma narrativa; solo un UDF LLM-NER può segmentare correttamente e classificare queste entità."
+    "udf_justification": "The expense_description field is free text that mixes company names and places in narrative form; only an LLM-NER UDF can correctly segment and classify these entities."
   },
   {
     "unique_id": "ner_udf_008",
     "database_id": "student_club",
     "table_schema": "CREATE TABLE income (  income_id INTEGER PRIMARY KEY,  date_received DATE,  amount DECIMAL,  source TEXT,  notes TEXT,  link_to_member INTEGER)",
-    "question": "Per l’incasso con income_id = 317, estrai i nomi di persone (PER) e organizzazioni (ORG) menzionati in notes.",
+    "question": "For the income with income_id = 317, extract the person (PER) and organization (ORG) names mentioned in notes.",
     "hypothetical_relevant_data": [
       {
         "income_id": 317,
-        "notes": "Ricevuto contributo da Fondazione Cariplo e donazione privata di Giulia Verdi per il progetto."
+        "notes": "Received a contribution from the Cariplo Foundation and a private donation from Giulia Verdi for the project."
       }
     ],
     "expected_result": {
       "ORG": [
-        "Fondazione Cariplo"
+        "Cariplo Foundation"
       ],
       "PER": [
         "Giulia Verdi"
       ]
     },
-    "udf_justification": "Il campo notes è libero e contiene sia nomi di entità aziendali sia nomi propri di persone; un UDF LLM-NER è necessario per suddividere e riconoscere correttamente entrambe le categorie."
+    "udf_justification": "The notes field is free text and contains both company entities and personal names; an LLM-NER UDF is required to split and correctly recognize both categories."
   },
   {
     "unique_id": "ner_udf_009",
     "database_id": "codebase_community",
     "table_schema": "CREATE TABLE postHistory (  Id INTEGER PRIMARY KEY,  PostHistoryTypeId INTEGER,  PostId INTEGER,  RevisionGUID TEXT,  CreationDate DATETIME,  UserId INTEGER,  Text TEXT,  Comment TEXT,  UserDisplayName TEXT)",
-    "question": "Per la voce di storia post con Id = 2048, elenca tutte le date menzionate nel campo Text.",
+    "question": "For the post history entry with Id = 2048, list all dates mentioned in the Text field.",
     "hypothetical_relevant_data": [
       {
         "Id": 2048,
-        "Text": "Modifica eseguita il 2025-06-01; scadenza originale fissata al 1 luglio 2025, revisione finale il 2025-07-15."
+        "Text": "Edit made on 2025-06-01; original deadline set for July 1, 2025, final revision on 2025-07-15."
       }
     ],
     "expected_result": [
       "2025-06-01",
-      "1 luglio 2025",
+      "July 1, 2025",
       "2025-07-15"
     ],
-    "udf_justification": "Il campo Text è un testo narrativo contenente più riferimenti temporali in formati diversi; SQL non può normalizzare né estrarre date menzionate in frasi libere, mentre un UDF LLM-NER può riconoscere e standardizzare i riferimenti a DATE."
+    "udf_justification": "The Text field is narrative text containing multiple temporal references in different formats; SQL cannot normalize or extract dates mentioned in free-form sentences, whereas an LLM-NER UDF can recognize and standardize the DATE references."
   },
   {
     "unique_id": "ner_udf_010",
     "database_id": "codebase_community",
-    "table_schema": "CREATE TABLE users (\n  Id INTEGER PRIMARY KEY,\n  Reputation INTEGER,\n  CreationDate DATETIME,\n  DisplayName TEXT,\n  LastAccessDate DATETIME,\n  WebsiteUrl TEXT,\n  Location TEXT,\n  AboutMe TEXT,\n  Views INTEGER,\n  UpVotes INTEGER,\n  DownVotes INTEGER\n)",
-    "question": "Per l’utente con Id = 85, estrai tutte le entità di tipo LOC (luogo) e ORG (organizzazione) menzionate nel campo AboutMe.",
+    "table_schema": "CREATE TABLE users (  Id INTEGER PRIMARY KEY,  Reputation INTEGER,  CreationDate DATETIME,  DisplayName TEXT,  LastAccessDate DATETIME,  WebsiteUrl TEXT,  Location TEXT,  AboutMe TEXT,  Views INTEGER,  UpVotes INTEGER,  DownVotes INTEGER)",
+    "question": "For the user with Id = 85, extract all LOC (location) and ORG (organization) entities mentioned in the AboutMe field.",
     "hypothetical_relevant_data": [
       {
         "Id": 85,
-        "AboutMe": "Sono ricercatore al CERN e precedentemente ho lavorato con ESA. Sono nato in Svizzera e ho vissuto in Francia."
+        "AboutMe": "I am a researcher at CERN and previously worked with ESA. I was born in Switzerland and have lived in France."
       }
     ],
     "expected_result": {
       "LOC": [
-        "Svizzera",
-        "Francia"
+        "Switzerland",
+        "France"
       ],
       "ORG": [
         "CERN",
         "ESA"
       ]
     },
-    "udf_justification": "Il campo AboutMe è libero e contiene nomi di luoghi e organizzazioni in testo narrativo; un UDF LLM-NER è necessario per segmentare e classificare correttamente LOC e ORG."
+    "udf_justification": "The AboutMe field is free text and contains place names and organizations in narrative prose; an LLM-NER UDF is required to segment and correctly classify LOC and ORG."
   }
 ]
 

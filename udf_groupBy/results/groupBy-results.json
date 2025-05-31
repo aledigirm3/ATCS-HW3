@@ -1,0 +1,106 @@
+[
+  {
+    "group": "groupby_001",
+    "gpt4o": {
+      "precision": 0.86,
+      "recall": 0.86,
+      "f1": 0.86
+    },
+    "claude4Sonnet": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  {
+    "group": "groupby_002",
+    "gpt4o": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "claude4Sonnet": {
+      "precision": 0.81,
+      "recall": 0.81,
+      "f1": 0.81
+    }
+  },
+  {
+    "group": "groupby_003",
+    "gpt4o": {
+      "precision": 0.71,
+      "recall": 0.71,
+      "f1": 0.71
+    },
+    "claude4Sonnet": {
+      "precision": 0.62,
+      "recall": 0.62,
+      "f1": 0.62
+    }
+  },
+  {
+    "group": "groupby_004",
+    "gpt4o": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "claude4Sonnet": {
+      "precision": 0.86,
+      "recall": 0.86,
+      "f1": 0.86
+    }
+  },
+  {
+    "group": "groupby_005",
+    "gpt4o": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "claude4Sonnet": {
+      "precision": 0.95,
+      "recall": 0.95,
+      "f1": 0.95
+    }
+  },
+  {
+    "group": "groupby_006",
+    "gpt4o": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "claude4Sonnet": {
+      "precision": 0.83,
+      "recall": 0.83,
+      "f1": 0.83
+    }
+  },
+  {
+    "group": "groupby_007",
+    "gpt4o": {
+      "precision": 0.81,
+      "recall": 0.81,
+      "f1": 0.81
+    },
+    "claude4Sonnet": {
+      "precision": 0.76,
+      "recall": 0.76,
+      "f1": 0.76
+    }
+  },
+  {
+    "group": "groupby_008",
+    "gpt4o": {
+      "precision": 0.78,
+      "recall": 0.78,
+      "f1": 0.78
+    },
+    "claude4Sonnet": {
+      "precision": 0.91,
+      "recall": 0.91,
+      "f1": 0.91
+    }
+  }
+]

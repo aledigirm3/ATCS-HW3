@@ -1,6 +1,6 @@
 # Neural Table Rapresentation
 
-As outlined in the previous section, SQL is a powerful and scalable language for working
+SQL is a powerful and scalable language for working
 with relational databases. However, users may encounter scenarios that require more
 sophisticated operations tasks (that go beyond the declarative and rule-based structure
 of SQL). 
